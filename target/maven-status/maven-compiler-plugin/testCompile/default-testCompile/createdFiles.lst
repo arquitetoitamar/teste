@@ -1,0 +1,10 @@
+com\estapar\parking\repository\GarageSectorRepositoryTest.class
+com\estapar\parking\CucumberRunner.class
+com\estapar\parking\steps\ParkingSteps.class
+com\estapar\parking\controller\WebhookControllerTest.class
+com\estapar\parking\service\StatusServiceTest.class
+com\estapar\parking\controller\GarageControllerTest.class
+com\estapar\parking\repository\ParkingSpotRepositoryTest.class
+com\estapar\parking\config\CucumberConfig.class
+com\estapar\parking\controller\RevenueControllerTest.class
+com\estapar\parking\service\RevenueServiceTest.class

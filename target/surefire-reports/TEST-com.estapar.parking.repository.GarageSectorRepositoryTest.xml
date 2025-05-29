@@ -1,0 +1,1035 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.estapar.parking.repository.GarageSectorRepositoryTest" time="10.324" tests="5" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="21"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.class.path" value="C:\Users\actdigital\git\Estapar\target\test-classes;C:\Users\actdigital\git\Estapar\target\classes;C:\Users\actdigital\.m2\repository\org\springframework\boot\spring-boot-starter-web\3.2.3\spring-boot-starter-web-3.2.3.jar;C:\Users\actdigital\.m2\repository\org\springframework\boot\spring-boot-starter\3.2.3\spring-boot-starter-3.2.3.jar;C:\Users\actdigital\.m2\repository\org\springframework\boot\spring-boot\3.2.3\spring-boot-3.2.3.jar;C:\Users\actdigital\.m2\repository\org\springframework\boot\spring-boot-autoconfigure\3.2.3\spring-boot-autoconfigure-3.2.3.jar;C:\Users\actdigital\.m2\repository\org\springframework\boot\spring-boot-starter-logging\3.2.3\spring-boot-starter-logging-3.2.3.jar;C:\Users\actdigital\.m2\repository\ch\qos\logback\logback-classic\1.4.14\logback-classic-1.4.14.jar;C:\Users\actdigital\.m2\repository\ch\qos\logback\logback-core\1.4.14\logback-core-1.4.14.jar;C:\Users\actdigital\.m2\repository\org\apache\logging\log4j\log4j-to-slf4j\2.21.1\log4j-to-slf4j-2.21.1.jar;C:\Users\actdigital\.m2\repository\org\apache\logging\log4j\log4j-api\2.21.1\log4j-api-2.21.1.jar;C:\Users\actdigital\.m2\repository\org\slf4j\jul-to-slf4j\2.0.12\jul-to-slf4j-2.0.12.jar;C:\Users\actdigital\.m2\repository\jakarta\annotation\jakarta.annotation-api\2.1.1\jakarta.annotation-api-2.1.1.jar;C:\Users\actdigital\.m2\repository\org\yaml\snakeyaml\2.2\snakeyaml-2.2.jar;C:\Users\actdigital\.m2\repository\org\springframework\boot\spring-boot-starter-json\3.2.3\spring-boot-starter-json-3.2.3.jar;C:\Users\actdigital\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.15.4\jackson-databind-2.15.4.jar;C:\Users\actdigital\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.15.4\jackson-annotations-2.15.4.jar;C:\Users\actdigital\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.15.4\jackson-core-2.15.4.jar;C:\Users\actdigital\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jdk8\2.15.4\jackson-datatype-jdk8-2.15.4.jar;C:\Users\actdigital\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jsr310\2.15.4\jackson-datatype-jsr310-2.15.4.jar;C:\Users\actdigital\.m2\repository\com\fasterxml\jackson\module\jackson-module-parameter-names\2.15.4\jackson-module-parameter-names-2.15.4.jar;C:\Users\actdigital\.m2\repository\org\springframework\boot\spring-boot-starter-tomcat\3.2.3\spring-boot-starter-tomcat-3.2.3.jar;C:\Users\actdigital\.m2\repository\org\apache\tomcat\embed\tomcat-embed-core\10.1.19\tomcat-embed-core-10.1.19.jar;C:\Users\actdigital\.m2\repository\org\apache\tomcat\embed\tomcat-embed-websocket\10.1.19\tomcat-embed-websocket-10.1.19.jar;C:\Users\actdigital\.m2\repository\org\springframework\spring-web\6.1.4\spring-web-6.1.4.jar;C:\Users\actdigital\.m2\repository\org\springframework\spring-beans\6.1.4\spring-beans-6.1.4.jar;C:\Users\actdigital\.m2\repository\org\springframework\spring-webmvc\6.1.4\spring-webmvc-6.1.4.jar;C:\Users\actdigital\.m2\repository\org\springframework\spring-context\6.1.4\spring-context-6.1.4.jar;C:\Users\actdigital\.m2\repository\org\springframework\spring-expression\6.1.4\spring-expression-6.1.4.jar;C:\Users\actdigital\.m2\repository\org\springframework\boot\spring-boot-starter-data-jpa\3.2.3\spring-boot-starter-data-jpa-3.2.3.jar;C:\Users\actdigital\.m2\repository\org\springframework\boot\spring-boot-starter-aop\3.2.3\spring-boot-starter-aop-3.2.3.jar;C:\Users\actdigital\.m2\repository\org\aspectj\aspectjweaver\1.9.21\aspectjweaver-1.9.21.jar;C:\Users\actdigital\.m2\repository\org\springframework\boot\spring-boot-starter-jdbc\3.2.3\spring-boot-starter-jdbc-3.2.3.jar;C:\Users\actdigital\.m2\repository\com\zaxxer\HikariCP\5.0.1\HikariCP-5.0.1.jar;C:\Users\actdigital\.m2\repository\org\springframework\spring-jdbc\6.1.4\spring-jdbc-6.1.4.jar;C:\Users\actdigital\.m2\repository\org\hibernate\orm\hibernate-core\6.4.4.Final\hibernate-core-6.4.4.Final.jar;C:\Users\actdigital\.m2\repository\jakarta\persistence\jakarta.persistence-api\3.1.0\jakarta.persistence-api-3.1.0.jar;C:\Users\actdigital\.m2\repository\jakarta\transaction\jakarta.transaction-api\2.0.1\jakarta.transaction-api-2.0.1.jar;C:\Users\actdigital\.m2\repository\org\jboss\logging\jboss-logging\3.5.3.Final\jboss-logging-3.5.3.Final.jar;C:\Users\actdigital\.m2\repository\org\hibernate\common\hibernate-commons-annotations\6.0.6.Final\hibernate-commons-annotations-6.0.6.Final.jar;C:\Users\actdigital\.m2\repository\io\smallrye\jandex\3.1.2\jandex-3.1.2.jar;C:\Users\actdigital\.m2\repository\com\fasterxml\classmate\1.6.0\classmate-1.6.0.jar;C:\Users\actdigital\.m2\repository\net\bytebuddy\byte-buddy\1.14.12\byte-buddy-1.14.12.jar;C:\Users\actdigital\.m2\repository\org\glassfish\jaxb\jaxb-runtime\4.0.4\jaxb-runtime-4.0.4.jar;C:\Users\actdigital\.m2\repository\org\glassfish\jaxb\jaxb-core\4.0.4\jaxb-core-4.0.4.jar;C:\Users\actdigital\.m2\repository\org\eclipse\angus\angus-activation\2.0.1\angus-activation-2.0.1.jar;C:\Users\actdigital\.m2\repository\org\glassfish\jaxb\txw2\4.0.4\txw2-4.0.4.jar;C:\Users\actdigital\.m2\repository\com\sun\istack\istack-commons-runtime\4.1.2\istack-commons-runtime-4.1.2.jar;C:\Users\actdigital\.m2\repository\jakarta\inject\jakarta.inject-api\2.0.1\jakarta.inject-api-2.0.1.jar;C:\Users\actdigital\.m2\repository\org\antlr\antlr4-runtime\4.13.0\antlr4-runtime-4.13.0.jar;C:\Users\actdigital\.m2\repository\org\springframework\data\spring-data-jpa\3.2.3\spring-data-jpa-3.2.3.jar;C:\Users\actdigital\.m2\repository\org\springframework\data\spring-data-commons\3.2.3\spring-data-commons-3.2.3.jar;C:\Users\actdigital\.m2\repository\org\springframework\spring-orm\6.1.4\spring-orm-6.1.4.jar;C:\Users\actdigital\.m2\repository\org\springframework\spring-tx\6.1.4\spring-tx-6.1.4.jar;C:\Users\actdigital\.m2\repository\org\slf4j\slf4j-api\2.0.12\slf4j-api-2.0.12.jar;C:\Users\actdigital\.m2\repository\org\springframework\spring-aspects\6.1.4\spring-aspects-6.1.4.jar;C:\Users\actdigital\.m2\repository\org\springframework\boot\spring-boot-starter-validation\3.2.3\spring-boot-starter-validation-3.2.3.jar;C:\Users\actdigital\.m2\repository\org\apache\tomcat\embed\tomcat-embed-el\10.1.19\tomcat-embed-el-10.1.19.jar;C:\Users\actdigital\.m2\repository\org\hibernate\validator\hibernate-validator\8.0.1.Final\hibernate-validator-8.0.1.Final.jar;C:\Users\actdigital\.m2\repository\jakarta\validation\jakarta.validation-api\3.0.2\jakarta.validation-api-3.0.2.jar;C:\Users\actdigital\.m2\repository\org\springframework\boot\spring-boot-starter-security\3.2.3\spring-boot-starter-security-3.2.3.jar;C:\Users\actdigital\.m2\repository\org\springframework\spring-aop\6.1.4\spring-aop-6.1.4.jar;C:\Users\actdigital\.m2\repository\org\springframework\security\spring-security-config\6.2.2\spring-security-config-6.2.2.jar;C:\Users\actdigital\.m2\repository\org\springframework\security\spring-security-core\6.2.2\spring-security-core-6.2.2.jar;C:\Users\actdigital\.m2\repository\org\springframework\security\spring-security-crypto\6.2.2\spring-security-crypto-6.2.2.jar;C:\Users\actdigital\.m2\repository\org\springframework\security\spring-security-web\6.2.2\spring-security-web-6.2.2.jar;C:\Users\actdigital\.m2\repository\org\springframework\boot\spring-boot-starter-actuator\3.2.3\spring-boot-starter-actuator-3.2.3.jar;C:\Users\actdigital\.m2\repository\org\springframework\boot\spring-boot-actuator-autoconfigure\3.2.3\spring-boot-actuator-autoconfigure-3.2.3.jar;C:\Users\actdigital\.m2\repository\org\springframework\boot\spring-boot-actuator\3.2.3\spring-boot-actuator-3.2.3.jar;C:\Users\actdigital\.m2\repository\io\micrometer\micrometer-observation\1.12.3\micrometer-observation-1.12.3.jar;C:\Users\actdigital\.m2\repository\io\micrometer\micrometer-commons\1.12.3\micrometer-commons-1.12.3.jar;C:\Users\actdigital\.m2\repository\io\micrometer\micrometer-jakarta9\1.12.3\micrometer-jakarta9-1.12.3.jar;C:\Users\actdigital\.m2\repository\io\micrometer\micrometer-core\1.12.3\micrometer-core-1.12.3.jar;C:\Users\actdigital\.m2\repository\org\hdrhistogram\HdrHistogram\2.1.12\HdrHistogram-2.1.12.jar;C:\Users\actdigital\.m2\repository\org\latencyutils\LatencyUtils\2.0.3\LatencyUtils-2.0.3.jar;C:\Users\actdigital\.m2\repository\org\postgresql\postgresql\42.6.1\postgresql-42.6.1.jar;C:\Users\actdigital\.m2\repository\org\checkerframework\checker-qual\3.31.0\checker-qual-3.31.0.jar;C:\Users\actdigital\.m2\repository\org\springdoc\springdoc-openapi-starter-webmvc-ui\2.3.0\springdoc-openapi-starter-webmvc-ui-2.3.0.jar;C:\Users\actdigital\.m2\repository\org\springdoc\springdoc-openapi-starter-webmvc-api\2.3.0\springdoc-openapi-starter-webmvc-api-2.3.0.jar;C:\Users\actdigital\.m2\repository\org\springdoc\springdoc-openapi-starter-common\2.3.0\springdoc-openapi-starter-common-2.3.0.jar;C:\Users\actdigital\.m2\repository\io\swagger\core\v3\swagger-core-jakarta\2.2.19\swagger-core-jakarta-2.2.19.jar;C:\Users\actdigital\.m2\repository\io\swagger\core\v3\swagger-annotations-jakarta\2.2.19\swagger-annotations-jakarta-2.2.19.jar;C:\Users\actdigital\.m2\repository\io\swagger\core\v3\swagger-models-jakarta\2.2.19\swagger-models-jakarta-2.2.19.jar;C:\Users\actdigital\.m2\repository\com\fasterxml\jackson\dataformat\jackson-dataformat-yaml\2.15.4\jackson-dataformat-yaml-2.15.4.jar;C:\Users\actdigital\.m2\repository\org\webjars\swagger-ui\5.10.3\swagger-ui-5.10.3.jar;C:\Users\actdigital\.m2\repository\org\projectlombok\lombok\1.18.30\lombok-1.18.30.jar;C:\Users\actdigital\.m2\repository\org\springframework\boot\spring-boot-starter-test\3.2.3\spring-boot-starter-test-3.2.3.jar;C:\Users\actdigital\.m2\repository\org\springframework\boot\spring-boot-test\3.2.3\spring-boot-test-3.2.3.jar;C:\Users\actdigital\.m2\repository\org\springframework\boot\spring-boot-test-autoconfigure\3.2.3\spring-boot-test-autoconfigure-3.2.3.jar;C:\Users\actdigital\.m2\repository\com\jayway\jsonpath\json-path\2.9.0\json-path-2.9.0.jar;C:\Users\actdigital\.m2\repository\jakarta\xml\bind\jakarta.xml.bind-api\4.0.1\jakarta.xml.bind-api-4.0.1.jar;C:\Users\actdigital\.m2\repository\jakarta\activation\jakarta.activation-api\2.1.2\jakarta.activation-api-2.1.2.jar;C:\Users\actdigital\.m2\repository\net\minidev\json-smart\2.5.0\json-smart-2.5.0.jar;C:\Users\actdigital\.m2\repository\net\minidev\accessors-smart\2.5.0\accessors-smart-2.5.0.jar;C:\Users\actdigital\.m2\repository\org\ow2\asm\asm\9.3\asm-9.3.jar;C:\Users\actdigital\.m2\repository\org\assertj\assertj-core\3.24.2\assertj-core-3.24.2.jar;C:\Users\actdigital\.m2\repository\org\awaitility\awaitility\4.2.0\awaitility-4.2.0.jar;C:\Users\actdigital\.m2\repository\org\hamcrest\hamcrest\2.2\hamcrest-2.2.jar;C:\Users\actdigital\.m2\repository\org\junit\jupiter\junit-jupiter\5.10.2\junit-jupiter-5.10.2.jar;C:\Users\actdigital\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.10.2\junit-jupiter-api-5.10.2.jar;C:\Users\actdigital\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.10.2\junit-jupiter-params-5.10.2.jar;C:\Users\actdigital\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.10.2\junit-jupiter-engine-5.10.2.jar;C:\Users\actdigital\.m2\repository\org\mockito\mockito-core\5.7.0\mockito-core-5.7.0.jar;C:\Users\actdigital\.m2\repository\net\bytebuddy\byte-buddy-agent\1.14.12\byte-buddy-agent-1.14.12.jar;C:\Users\actdigital\.m2\repository\org\objenesis\objenesis\3.3\objenesis-3.3.jar;C:\Users\actdigital\.m2\repository\org\mockito\mockito-junit-jupiter\5.7.0\mockito-junit-jupiter-5.7.0.jar;C:\Users\actdigital\.m2\repository\org\skyscreamer\jsonassert\1.5.1\jsonassert-1.5.1.jar;C:\Users\actdigital\.m2\repository\com\vaadin\external\google\android-json\0.0.20131108.vaadin1\android-json-0.0.20131108.vaadin1.jar;C:\Users\actdigital\.m2\repository\org\springframework\spring-core\6.1.4\spring-core-6.1.4.jar;C:\Users\actdigital\.m2\repository\org\springframework\spring-jcl\6.1.4\spring-jcl-6.1.4.jar;C:\Users\actdigital\.m2\repository\org\springframework\spring-test\6.1.4\spring-test-6.1.4.jar;C:\Users\actdigital\.m2\repository\org\xmlunit\xmlunit-core\2.9.1\xmlunit-core-2.9.1.jar;C:\Users\actdigital\.m2\repository\io\cucumber\cucumber-java\7.15.0\cucumber-java-7.15.0.jar;C:\Users\actdigital\.m2\repository\io\cucumber\cucumber-core\7.15.0\cucumber-core-7.15.0.jar;C:\Users\actdigital\.m2\repository\io\cucumber\cucumber-gherkin\7.15.0\cucumber-gherkin-7.15.0.jar;C:\Users\actdigital\.m2\repository\io\cucumber\cucumber-gherkin-messages\7.15.0\cucumber-gherkin-messages-7.15.0.jar;C:\Users\actdigital\.m2\repository\io\cucumber\gherkin\26.2.0\gherkin-26.2.0.jar;C:\Users\actdigital\.m2\repository\io\cucumber\messages\22.0.0\messages-22.0.0.jar;C:\Users\actdigital\.m2\repository\io\cucumber\tag-expressions\6.0.0\tag-expressions-6.0.0.jar;C:\Users\actdigital\.m2\repository\io\cucumber\cucumber-expressions\17.0.1\cucumber-expressions-17.0.1.jar;C:\Users\actdigital\.m2\repository\io\cucumber\datatable\7.15.0\datatable-7.15.0.jar;C:\Users\actdigital\.m2\repository\io\cucumber\cucumber-plugin\7.15.0\cucumber-plugin-7.15.0.jar;C:\Users\actdigital\.m2\repository\io\cucumber\docstring\7.15.0\docstring-7.15.0.jar;C:\Users\actdigital\.m2\repository\io\cucumber\html-formatter\20.4.0\html-formatter-20.4.0.jar;C:\Users\actdigital\.m2\repository\io\cucumber\junit-xml-formatter\0.2.0\junit-xml-formatter-0.2.0.jar;C:\Users\actdigital\.m2\repository\io\cucumber\ci-environment\10.0.0\ci-environment-10.0.0.jar;C:\Users\actdigital\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\actdigital\.m2\repository\io\cucumber\cucumber-junit\7.15.0\cucumber-junit-7.15.0.jar;C:\Users\actdigital\.m2\repository\junit\junit\4.13.2\junit-4.13.2.jar;C:\Users\actdigital\.m2\repository\org\hamcrest\hamcrest-core\2.2\hamcrest-core-2.2.jar;C:\Users\actdigital\.m2\repository\io\cucumber\cucumber-spring\7.15.0\cucumber-spring-7.15.0.jar;C:\Users\actdigital\.m2\repository\io\cucumber\cucumber-junit-platform-engine\7.15.0\cucumber-junit-platform-engine-7.15.0.jar;C:\Users\actdigital\.m2\repository\org\junit\platform\junit-platform-engine\1.10.2\junit-platform-engine-1.10.2.jar;C:\Users\actdigital\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\actdigital\.m2\repository\org\junit\platform\junit-platform-suite\1.10.1\junit-platform-suite-1.10.1.jar;C:\Users\actdigital\.m2\repository\org\junit\platform\junit-platform-suite-api\1.10.1\junit-platform-suite-api-1.10.1.jar;C:\Users\actdigital\.m2\repository\org\junit\platform\junit-platform-commons\1.10.2\junit-platform-commons-1.10.2.jar;C:\Users\actdigital\.m2\repository\org\junit\platform\junit-platform-suite-engine\1.10.1\junit-platform-suite-engine-1.10.1.jar;C:\Users\actdigital\.m2\repository\org\junit\platform\junit-platform-suite-commons\1.10.2\junit-platform-suite-commons-1.10.2.jar;C:\Users\actdigital\.m2\repository\org\junit\platform\junit-platform-launcher\1.10.2\junit-platform-launcher-1.10.2.jar;C:\Users\actdigital\.m2\repository\net\masterthought\maven-cucumber-reporting\5.7.7\maven-cucumber-reporting-5.7.7.jar;C:\Users\actdigital\.m2\repository\commons-collections\commons-collections\3.2.2\commons-collections-3.2.2.jar;C:\Users\actdigital\.m2\repository\net\masterthought\cucumber-reporting\5.7.7\cucumber-reporting-5.7.7.jar;C:\Users\actdigital\.m2\repository\org\apache\velocity\velocity-engine-core\2.3\velocity-engine-core-2.3.jar;C:\Users\actdigital\.m2\repository\joda-time\joda-time\2.12.5\joda-time-2.12.5.jar;C:\Users\actdigital\.m2\repository\org\apache\commons\commons-lang3\3.13.0\commons-lang3-3.13.0.jar;C:\Users\actdigital\.m2\repository\commons-io\commons-io\2.7\commons-io-2.7.jar;C:\Users\actdigital\.m2\repository\org\codehaus\plexus\plexus-utils\3.5.1\plexus-utils-3.5.1.jar;C:\Users\actdigital\.m2\repository\org\jsoup\jsoup\1.16.1\jsoup-1.16.1.jar;C:\Users\actdigital\.m2\repository\com\googlecode\owasp-java-html-sanitizer\owasp-java-html-sanitizer\20220608.1\owasp-java-html-sanitizer-20220608.1.jar;C:\Users\actdigital\.m2\repository\com\google\guava\guava\30.1-jre\guava-30.1-jre.jar;C:\Users\actdigital\.m2\repository\com\google\guava\failureaccess\1.0.1\failureaccess-1.0.1.jar;C:\Users\actdigital\.m2\repository\com\google\guava\listenablefuture\9999.0-empty-to-avoid-conflict-with-guava\listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar;C:\Users\actdigital\.m2\repository\com\google\code\findbugs\jsr305\3.0.2\jsr305-3.0.2.jar;C:\Users\actdigital\.m2\repository\com\google\errorprone\error_prone_annotations\2.3.4\error_prone_annotations-2.3.4.jar;C:\Users\actdigital\.m2\repository\com\google\j2objc\j2objc-annotations\1.3\j2objc-annotations-1.3.jar;C:\Users\actdigital\.m2\repository\commons-configuration\commons-configuration\1.10\commons-configuration-1.10.jar;C:\Users\actdigital\.m2\repository\commons-lang\commons-lang\2.6\commons-lang-2.6.jar;C:\Users\actdigital\.m2\repository\commons-logging\commons-logging\1.1.1\commons-logging-1.1.1.jar;C:\Users\actdigital\.m2\repository\com\h2database\h2\2.2.224\h2-2.2.224.jar;"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="user.variant" value=""/>
+    <property name="java.vendor.url" value="https://java.oracle.com/"/>
+    <property name="user.timezone" value="America/Sao_Paulo"/>
+    <property name="org.jboss.logging.provider" value="slf4j"/>
+    <property name="os.name" value="Windows 11"/>
+    <property name="java.vm.specification.version" value="21"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="BR"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-21\bin"/>
+    <property name="sun.java.command" value="C:\Users\actdigital\AppData\Local\Temp\surefire1810115888003043885\surefirebooter-20250529150113948_3.jar C:\Users\actdigital\AppData\Local\Temp\surefire1810115888003043885 2025-05-29T15-01-13_576-jvmRun1 surefire-20250529150113948_1tmp surefire_0-20250529150113948_2tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="C:\Users\actdigital\git\Estapar\target\test-classes;C:\Users\actdigital\git\Estapar\target\classes;C:\Users\actdigital\.m2\repository\org\springframework\boot\spring-boot-starter-web\3.2.3\spring-boot-starter-web-3.2.3.jar;C:\Users\actdigital\.m2\repository\org\springframework\boot\spring-boot-starter\3.2.3\spring-boot-starter-3.2.3.jar;C:\Users\actdigital\.m2\repository\org\springframework\boot\spring-boot\3.2.3\spring-boot-3.2.3.jar;C:\Users\actdigital\.m2\repository\org\springframework\boot\spring-boot-autoconfigure\3.2.3\spring-boot-autoconfigure-3.2.3.jar;C:\Users\actdigital\.m2\repository\org\springframework\boot\spring-boot-starter-logging\3.2.3\spring-boot-starter-logging-3.2.3.jar;C:\Users\actdigital\.m2\repository\ch\qos\logback\logback-classic\1.4.14\logback-classic-1.4.14.jar;C:\Users\actdigital\.m2\repository\ch\qos\logback\logback-core\1.4.14\logback-core-1.4.14.jar;C:\Users\actdigital\.m2\repository\org\apache\logging\log4j\log4j-to-slf4j\2.21.1\log4j-to-slf4j-2.21.1.jar;C:\Users\actdigital\.m2\repository\org\apache\logging\log4j\log4j-api\2.21.1\log4j-api-2.21.1.jar;C:\Users\actdigital\.m2\repository\org\slf4j\jul-to-slf4j\2.0.12\jul-to-slf4j-2.0.12.jar;C:\Users\actdigital\.m2\repository\jakarta\annotation\jakarta.annotation-api\2.1.1\jakarta.annotation-api-2.1.1.jar;C:\Users\actdigital\.m2\repository\org\yaml\snakeyaml\2.2\snakeyaml-2.2.jar;C:\Users\actdigital\.m2\repository\org\springframework\boot\spring-boot-starter-json\3.2.3\spring-boot-starter-json-3.2.3.jar;C:\Users\actdigital\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.15.4\jackson-databind-2.15.4.jar;C:\Users\actdigital\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.15.4\jackson-annotations-2.15.4.jar;C:\Users\actdigital\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.15.4\jackson-core-2.15.4.jar;C:\Users\actdigital\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jdk8\2.15.4\jackson-datatype-jdk8-2.15.4.jar;C:\Users\actdigital\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jsr310\2.15.4\jackson-datatype-jsr310-2.15.4.jar;C:\Users\actdigital\.m2\repository\com\fasterxml\jackson\module\jackson-module-parameter-names\2.15.4\jackson-module-parameter-names-2.15.4.jar;C:\Users\actdigital\.m2\repository\org\springframework\boot\spring-boot-starter-tomcat\3.2.3\spring-boot-starter-tomcat-3.2.3.jar;C:\Users\actdigital\.m2\repository\org\apache\tomcat\embed\tomcat-embed-core\10.1.19\tomcat-embed-core-10.1.19.jar;C:\Users\actdigital\.m2\repository\org\apache\tomcat\embed\tomcat-embed-websocket\10.1.19\tomcat-embed-websocket-10.1.19.jar;C:\Users\actdigital\.m2\repository\org\springframework\spring-web\6.1.4\spring-web-6.1.4.jar;C:\Users\actdigital\.m2\repository\org\springframework\spring-beans\6.1.4\spring-beans-6.1.4.jar;C:\Users\actdigital\.m2\repository\org\springframework\spring-webmvc\6.1.4\spring-webmvc-6.1.4.jar;C:\Users\actdigital\.m2\repository\org\springframework\spring-context\6.1.4\spring-context-6.1.4.jar;C:\Users\actdigital\.m2\repository\org\springframework\spring-expression\6.1.4\spring-expression-6.1.4.jar;C:\Users\actdigital\.m2\repository\org\springframework\boot\spring-boot-starter-data-jpa\3.2.3\spring-boot-starter-data-jpa-3.2.3.jar;C:\Users\actdigital\.m2\repository\org\springframework\boot\spring-boot-starter-aop\3.2.3\spring-boot-starter-aop-3.2.3.jar;C:\Users\actdigital\.m2\repository\org\aspectj\aspectjweaver\1.9.21\aspectjweaver-1.9.21.jar;C:\Users\actdigital\.m2\repository\org\springframework\boot\spring-boot-starter-jdbc\3.2.3\spring-boot-starter-jdbc-3.2.3.jar;C:\Users\actdigital\.m2\repository\com\zaxxer\HikariCP\5.0.1\HikariCP-5.0.1.jar;C:\Users\actdigital\.m2\repository\org\springframework\spring-jdbc\6.1.4\spring-jdbc-6.1.4.jar;C:\Users\actdigital\.m2\repository\org\hibernate\orm\hibernate-core\6.4.4.Final\hibernate-core-6.4.4.Final.jar;C:\Users\actdigital\.m2\repository\jakarta\persistence\jakarta.persistence-api\3.1.0\jakarta.persistence-api-3.1.0.jar;C:\Users\actdigital\.m2\repository\jakarta\transaction\jakarta.transaction-api\2.0.1\jakarta.transaction-api-2.0.1.jar;C:\Users\actdigital\.m2\repository\org\jboss\logging\jboss-logging\3.5.3.Final\jboss-logging-3.5.3.Final.jar;C:\Users\actdigital\.m2\repository\org\hibernate\common\hibernate-commons-annotations\6.0.6.Final\hibernate-commons-annotations-6.0.6.Final.jar;C:\Users\actdigital\.m2\repository\io\smallrye\jandex\3.1.2\jandex-3.1.2.jar;C:\Users\actdigital\.m2\repository\com\fasterxml\classmate\1.6.0\classmate-1.6.0.jar;C:\Users\actdigital\.m2\repository\net\bytebuddy\byte-buddy\1.14.12\byte-buddy-1.14.12.jar;C:\Users\actdigital\.m2\repository\org\glassfish\jaxb\jaxb-runtime\4.0.4\jaxb-runtime-4.0.4.jar;C:\Users\actdigital\.m2\repository\org\glassfish\jaxb\jaxb-core\4.0.4\jaxb-core-4.0.4.jar;C:\Users\actdigital\.m2\repository\org\eclipse\angus\angus-activation\2.0.1\angus-activation-2.0.1.jar;C:\Users\actdigital\.m2\repository\org\glassfish\jaxb\txw2\4.0.4\txw2-4.0.4.jar;C:\Users\actdigital\.m2\repository\com\sun\istack\istack-commons-runtime\4.1.2\istack-commons-runtime-4.1.2.jar;C:\Users\actdigital\.m2\repository\jakarta\inject\jakarta.inject-api\2.0.1\jakarta.inject-api-2.0.1.jar;C:\Users\actdigital\.m2\repository\org\antlr\antlr4-runtime\4.13.0\antlr4-runtime-4.13.0.jar;C:\Users\actdigital\.m2\repository\org\springframework\data\spring-data-jpa\3.2.3\spring-data-jpa-3.2.3.jar;C:\Users\actdigital\.m2\repository\org\springframework\data\spring-data-commons\3.2.3\spring-data-commons-3.2.3.jar;C:\Users\actdigital\.m2\repository\org\springframework\spring-orm\6.1.4\spring-orm-6.1.4.jar;C:\Users\actdigital\.m2\repository\org\springframework\spring-tx\6.1.4\spring-tx-6.1.4.jar;C:\Users\actdigital\.m2\repository\org\slf4j\slf4j-api\2.0.12\slf4j-api-2.0.12.jar;C:\Users\actdigital\.m2\repository\org\springframework\spring-aspects\6.1.4\spring-aspects-6.1.4.jar;C:\Users\actdigital\.m2\repository\org\springframework\boot\spring-boot-starter-validation\3.2.3\spring-boot-starter-validation-3.2.3.jar;C:\Users\actdigital\.m2\repository\org\apache\tomcat\embed\tomcat-embed-el\10.1.19\tomcat-embed-el-10.1.19.jar;C:\Users\actdigital\.m2\repository\org\hibernate\validator\hibernate-validator\8.0.1.Final\hibernate-validator-8.0.1.Final.jar;C:\Users\actdigital\.m2\repository\jakarta\validation\jakarta.validation-api\3.0.2\jakarta.validation-api-3.0.2.jar;C:\Users\actdigital\.m2\repository\org\springframework\boot\spring-boot-starter-security\3.2.3\spring-boot-starter-security-3.2.3.jar;C:\Users\actdigital\.m2\repository\org\springframework\spring-aop\6.1.4\spring-aop-6.1.4.jar;C:\Users\actdigital\.m2\repository\org\springframework\security\spring-security-config\6.2.2\spring-security-config-6.2.2.jar;C:\Users\actdigital\.m2\repository\org\springframework\security\spring-security-core\6.2.2\spring-security-core-6.2.2.jar;C:\Users\actdigital\.m2\repository\org\springframework\security\spring-security-crypto\6.2.2\spring-security-crypto-6.2.2.jar;C:\Users\actdigital\.m2\repository\org\springframework\security\spring-security-web\6.2.2\spring-security-web-6.2.2.jar;C:\Users\actdigital\.m2\repository\org\springframework\boot\spring-boot-starter-actuator\3.2.3\spring-boot-starter-actuator-3.2.3.jar;C:\Users\actdigital\.m2\repository\org\springframework\boot\spring-boot-actuator-autoconfigure\3.2.3\spring-boot-actuator-autoconfigure-3.2.3.jar;C:\Users\actdigital\.m2\repository\org\springframework\boot\spring-boot-actuator\3.2.3\spring-boot-actuator-3.2.3.jar;C:\Users\actdigital\.m2\repository\io\micrometer\micrometer-observation\1.12.3\micrometer-observation-1.12.3.jar;C:\Users\actdigital\.m2\repository\io\micrometer\micrometer-commons\1.12.3\micrometer-commons-1.12.3.jar;C:\Users\actdigital\.m2\repository\io\micrometer\micrometer-jakarta9\1.12.3\micrometer-jakarta9-1.12.3.jar;C:\Users\actdigital\.m2\repository\io\micrometer\micrometer-core\1.12.3\micrometer-core-1.12.3.jar;C:\Users\actdigital\.m2\repository\org\hdrhistogram\HdrHistogram\2.1.12\HdrHistogram-2.1.12.jar;C:\Users\actdigital\.m2\repository\org\latencyutils\LatencyUtils\2.0.3\LatencyUtils-2.0.3.jar;C:\Users\actdigital\.m2\repository\org\postgresql\postgresql\42.6.1\postgresql-42.6.1.jar;C:\Users\actdigital\.m2\repository\org\checkerframework\checker-qual\3.31.0\checker-qual-3.31.0.jar;C:\Users\actdigital\.m2\repository\org\springdoc\springdoc-openapi-starter-webmvc-ui\2.3.0\springdoc-openapi-starter-webmvc-ui-2.3.0.jar;C:\Users\actdigital\.m2\repository\org\springdoc\springdoc-openapi-starter-webmvc-api\2.3.0\springdoc-openapi-starter-webmvc-api-2.3.0.jar;C:\Users\actdigital\.m2\repository\org\springdoc\springdoc-openapi-starter-common\2.3.0\springdoc-openapi-starter-common-2.3.0.jar;C:\Users\actdigital\.m2\repository\io\swagger\core\v3\swagger-core-jakarta\2.2.19\swagger-core-jakarta-2.2.19.jar;C:\Users\actdigital\.m2\repository\io\swagger\core\v3\swagger-annotations-jakarta\2.2.19\swagger-annotations-jakarta-2.2.19.jar;C:\Users\actdigital\.m2\repository\io\swagger\core\v3\swagger-models-jakarta\2.2.19\swagger-models-jakarta-2.2.19.jar;C:\Users\actdigital\.m2\repository\com\fasterxml\jackson\dataformat\jackson-dataformat-yaml\2.15.4\jackson-dataformat-yaml-2.15.4.jar;C:\Users\actdigital\.m2\repository\org\webjars\swagger-ui\5.10.3\swagger-ui-5.10.3.jar;C:\Users\actdigital\.m2\repository\org\projectlombok\lombok\1.18.30\lombok-1.18.30.jar;C:\Users\actdigital\.m2\repository\org\springframework\boot\spring-boot-starter-test\3.2.3\spring-boot-starter-test-3.2.3.jar;C:\Users\actdigital\.m2\repository\org\springframework\boot\spring-boot-test\3.2.3\spring-boot-test-3.2.3.jar;C:\Users\actdigital\.m2\repository\org\springframework\boot\spring-boot-test-autoconfigure\3.2.3\spring-boot-test-autoconfigure-3.2.3.jar;C:\Users\actdigital\.m2\repository\com\jayway\jsonpath\json-path\2.9.0\json-path-2.9.0.jar;C:\Users\actdigital\.m2\repository\jakarta\xml\bind\jakarta.xml.bind-api\4.0.1\jakarta.xml.bind-api-4.0.1.jar;C:\Users\actdigital\.m2\repository\jakarta\activation\jakarta.activation-api\2.1.2\jakarta.activation-api-2.1.2.jar;C:\Users\actdigital\.m2\repository\net\minidev\json-smart\2.5.0\json-smart-2.5.0.jar;C:\Users\actdigital\.m2\repository\net\minidev\accessors-smart\2.5.0\accessors-smart-2.5.0.jar;C:\Users\actdigital\.m2\repository\org\ow2\asm\asm\9.3\asm-9.3.jar;C:\Users\actdigital\.m2\repository\org\assertj\assertj-core\3.24.2\assertj-core-3.24.2.jar;C:\Users\actdigital\.m2\repository\org\awaitility\awaitility\4.2.0\awaitility-4.2.0.jar;C:\Users\actdigital\.m2\repository\org\hamcrest\hamcrest\2.2\hamcrest-2.2.jar;C:\Users\actdigital\.m2\repository\org\junit\jupiter\junit-jupiter\5.10.2\junit-jupiter-5.10.2.jar;C:\Users\actdigital\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.10.2\junit-jupiter-api-5.10.2.jar;C:\Users\actdigital\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.10.2\junit-jupiter-params-5.10.2.jar;C:\Users\actdigital\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.10.2\junit-jupiter-engine-5.10.2.jar;C:\Users\actdigital\.m2\repository\org\mockito\mockito-core\5.7.0\mockito-core-5.7.0.jar;C:\Users\actdigital\.m2\repository\net\bytebuddy\byte-buddy-agent\1.14.12\byte-buddy-agent-1.14.12.jar;C:\Users\actdigital\.m2\repository\org\objenesis\objenesis\3.3\objenesis-3.3.jar;C:\Users\actdigital\.m2\repository\org\mockito\mockito-junit-jupiter\5.7.0\mockito-junit-jupiter-5.7.0.jar;C:\Users\actdigital\.m2\repository\org\skyscreamer\jsonassert\1.5.1\jsonassert-1.5.1.jar;C:\Users\actdigital\.m2\repository\com\vaadin\external\google\android-json\0.0.20131108.vaadin1\android-json-0.0.20131108.vaadin1.jar;C:\Users\actdigital\.m2\repository\org\springframework\spring-core\6.1.4\spring-core-6.1.4.jar;C:\Users\actdigital\.m2\repository\org\springframework\spring-jcl\6.1.4\spring-jcl-6.1.4.jar;C:\Users\actdigital\.m2\repository\org\springframework\spring-test\6.1.4\spring-test-6.1.4.jar;C:\Users\actdigital\.m2\repository\org\xmlunit\xmlunit-core\2.9.1\xmlunit-core-2.9.1.jar;C:\Users\actdigital\.m2\repository\io\cucumber\cucumber-java\7.15.0\cucumber-java-7.15.0.jar;C:\Users\actdigital\.m2\repository\io\cucumber\cucumber-core\7.15.0\cucumber-core-7.15.0.jar;C:\Users\actdigital\.m2\repository\io\cucumber\cucumber-gherkin\7.15.0\cucumber-gherkin-7.15.0.jar;C:\Users\actdigital\.m2\repository\io\cucumber\cucumber-gherkin-messages\7.15.0\cucumber-gherkin-messages-7.15.0.jar;C:\Users\actdigital\.m2\repository\io\cucumber\gherkin\26.2.0\gherkin-26.2.0.jar;C:\Users\actdigital\.m2\repository\io\cucumber\messages\22.0.0\messages-22.0.0.jar;C:\Users\actdigital\.m2\repository\io\cucumber\tag-expressions\6.0.0\tag-expressions-6.0.0.jar;C:\Users\actdigital\.m2\repository\io\cucumber\cucumber-expressions\17.0.1\cucumber-expressions-17.0.1.jar;C:\Users\actdigital\.m2\repository\io\cucumber\datatable\7.15.0\datatable-7.15.0.jar;C:\Users\actdigital\.m2\repository\io\cucumber\cucumber-plugin\7.15.0\cucumber-plugin-7.15.0.jar;C:\Users\actdigital\.m2\repository\io\cucumber\docstring\7.15.0\docstring-7.15.0.jar;C:\Users\actdigital\.m2\repository\io\cucumber\html-formatter\20.4.0\html-formatter-20.4.0.jar;C:\Users\actdigital\.m2\repository\io\cucumber\junit-xml-formatter\0.2.0\junit-xml-formatter-0.2.0.jar;C:\Users\actdigital\.m2\repository\io\cucumber\ci-environment\10.0.0\ci-environment-10.0.0.jar;C:\Users\actdigital\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\actdigital\.m2\repository\io\cucumber\cucumber-junit\7.15.0\cucumber-junit-7.15.0.jar;C:\Users\actdigital\.m2\repository\junit\junit\4.13.2\junit-4.13.2.jar;C:\Users\actdigital\.m2\repository\org\hamcrest\hamcrest-core\2.2\hamcrest-core-2.2.jar;C:\Users\actdigital\.m2\repository\io\cucumber\cucumber-spring\7.15.0\cucumber-spring-7.15.0.jar;C:\Users\actdigital\.m2\repository\io\cucumber\cucumber-junit-platform-engine\7.15.0\cucumber-junit-platform-engine-7.15.0.jar;C:\Users\actdigital\.m2\repository\org\junit\platform\junit-platform-engine\1.10.2\junit-platform-engine-1.10.2.jar;C:\Users\actdigital\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\actdigital\.m2\repository\org\junit\platform\junit-platform-suite\1.10.1\junit-platform-suite-1.10.1.jar;C:\Users\actdigital\.m2\repository\org\junit\platform\junit-platform-suite-api\1.10.1\junit-platform-suite-api-1.10.1.jar;C:\Users\actdigital\.m2\repository\org\junit\platform\junit-platform-commons\1.10.2\junit-platform-commons-1.10.2.jar;C:\Users\actdigital\.m2\repository\org\junit\platform\junit-platform-suite-engine\1.10.1\junit-platform-suite-engine-1.10.1.jar;C:\Users\actdigital\.m2\repository\org\junit\platform\junit-platform-suite-commons\1.10.2\junit-platform-suite-commons-1.10.2.jar;C:\Users\actdigital\.m2\repository\org\junit\platform\junit-platform-launcher\1.10.2\junit-platform-launcher-1.10.2.jar;C:\Users\actdigital\.m2\repository\net\masterthought\maven-cucumber-reporting\5.7.7\maven-cucumber-reporting-5.7.7.jar;C:\Users\actdigital\.m2\repository\commons-collections\commons-collections\3.2.2\commons-collections-3.2.2.jar;C:\Users\actdigital\.m2\repository\net\masterthought\cucumber-reporting\5.7.7\cucumber-reporting-5.7.7.jar;C:\Users\actdigital\.m2\repository\org\apache\velocity\velocity-engine-core\2.3\velocity-engine-core-2.3.jar;C:\Users\actdigital\.m2\repository\joda-time\joda-time\2.12.5\joda-time-2.12.5.jar;C:\Users\actdigital\.m2\repository\org\apache\commons\commons-lang3\3.13.0\commons-lang3-3.13.0.jar;C:\Users\actdigital\.m2\repository\commons-io\commons-io\2.7\commons-io-2.7.jar;C:\Users\actdigital\.m2\repository\org\codehaus\plexus\plexus-utils\3.5.1\plexus-utils-3.5.1.jar;C:\Users\actdigital\.m2\repository\org\jsoup\jsoup\1.16.1\jsoup-1.16.1.jar;C:\Users\actdigital\.m2\repository\com\googlecode\owasp-java-html-sanitizer\owasp-java-html-sanitizer\20220608.1\owasp-java-html-sanitizer-20220608.1.jar;C:\Users\actdigital\.m2\repository\com\google\guava\guava\30.1-jre\guava-30.1-jre.jar;C:\Users\actdigital\.m2\repository\com\google\guava\failureaccess\1.0.1\failureaccess-1.0.1.jar;C:\Users\actdigital\.m2\repository\com\google\guava\listenablefuture\9999.0-empty-to-avoid-conflict-with-guava\listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar;C:\Users\actdigital\.m2\repository\com\google\code\findbugs\jsr305\3.0.2\jsr305-3.0.2.jar;C:\Users\actdigital\.m2\repository\com\google\errorprone\error_prone_annotations\2.3.4\error_prone_annotations-2.3.4.jar;C:\Users\actdigital\.m2\repository\com\google\j2objc\j2objc-annotations\1.3\j2objc-annotations-1.3.jar;C:\Users\actdigital\.m2\repository\commons-configuration\commons-configuration\1.10\commons-configuration-1.10.jar;C:\Users\actdigital\.m2\repository\commons-lang\commons-lang\2.6\commons-lang-2.6.jar;C:\Users\actdigital\.m2\repository\commons-logging\commons-logging\1.1.1\commons-logging-1.1.1.jar;C:\Users\actdigital\.m2\repository\com\h2database\h2\2.2.224\h2-2.2.224.jar;"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="C:\Users\actdigital"/>
+    <property name="user.language" value="pt"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2024-10-15"/>
+    <property name="java.home" value="C:\Program Files\Java\jdk-21"/>
+    <property name="file.separator" value="\"/>
+    <property name="basedir" value="C:\Users\actdigital\git\Estapar"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="FILE_LOG_CHARSET" value="UTF-8"/>
+    <property name="java.awt.headless" value="true"/>
+    <property name="surefire.real.class.path" value="C:\Users\actdigital\AppData\Local\Temp\surefire1810115888003043885\surefirebooter-20250529150113948_3.jar"/>
+    <property name="user.script" value=""/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="21.0.5+9-LTS-239"/>
+    <property name="user.name" value="actdigital"/>
+    <property name="stdout.encoding" value="Cp1252"/>
+    <property name="path.separator" value=";"/>
+    <property name="os.version" value="10.0"/>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="localRepository" value="C:\Users\actdigital\.m2\repository"/>
+    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="C:\Users\ACTDIG~1\AppData\Local\Temp\"/>
+    <property name="java.version" value="21.0.5"/>
+    <property name="user.dir" value="C:\Users\actdigital\git\Estapar"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="PID" value="34184"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="CONSOLE_LOG_CHARSET" value="UTF-8"/>
+    <property name="native.encoding" value="Cp1252"/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk-21\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Users\actdigital\.local\bin;C:\Users\actdigital\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\actdigital\bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\WINDOWS\System32\OpenSSH;C:\Program Files\dotnet;C:\Program Files\Git\cmd;C:\Program Files\Docker\Docker\resources\bin;C:\Users\actdigital\AppData\Local\nvm;C:\nvm4w\nodejs;C:\terraform;C:\Program Files\Amazon\AWSCLIV2;C:\Users\actdigital\git\java-1.8.0-openjdk-1.8.0.392-1.b08.redhat.windows.x86_64\jdk\bin;C:\Users\actdigital\AppData\Local\Programs\cursor\resources\app\bin;C:\Users\actdigital\AppData\Local\Programs\Python\Launcher;C:\Users\actdigital\AppData\Local\Microsoft\WindowsApps;C:\Users\actdigital\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\actdigital\AppData\Local\nvm;C:\nvm4w\nodejs;C:\Users\actdigital\git\java-1.8.0-openjdk-1.8.0.392-1.b08.redhat.windows.x86_64\jdk\bin;C:\Users\actdigital\git\apache-maven-3.9.9-bin\apache-maven-3.9.9\bin;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2024.3.3\bin;C:\Users\actdigital\AppData\Local\Microsoft\WinGet\Packages\Helm.Helm_Microsoft.Winget.Source_8wekyb3d8bbwe\windows-amd64;C:\Users\actdigital\eksctl.exe;C:\Program Files\Java\jdk-21\bin;C:\Users\actdigital\AppData\Local\Programs\cursor\resources\app\bin;C:\Program Files\Java\jdk-21\.local\bin;C:\dev\kubectl-ai_Windows_x86_64;C:\Users\actdigital\AppData\Roaming\Cursor\User\globalStorage\github.copilot-chat\debugCommand;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl;."/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="stderr.encoding" value="Cp1252"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.version" value="21.0.5+9-LTS-239"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="65.0"/>
+  </properties>
+  <testcase name="save_ShouldPersistNewSector" classname="com.estapar.parking.repository.GarageSectorRepositoryTest" time="0.536">
+    <system-out><![CDATA[15:01:20.726 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.estapar.parking.repository.GarageSectorRepositoryTest]: GarageSectorRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+15:01:21.066 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.estapar.parking.ParkingManagementApplication for test class com.estapar.parking.repository.GarageSectorRepositoryTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.3)
+
+2025-05-29T15:01:22.146-03:00  INFO 34184 --- [           main] c.e.p.r.GarageSectorRepositoryTest       : Starting GarageSectorRepositoryTest using Java 21.0.5 with PID 34184 (started by actdigital in C:\Users\actdigital\git\Estapar)
+2025-05-29T15:01:22.147-03:00 DEBUG 34184 --- [           main] c.e.p.r.GarageSectorRepositoryTest       : Running with Spring Boot v3.2.3, Spring v6.1.4
+2025-05-29T15:01:22.148-03:00  INFO 34184 --- [           main] c.e.p.r.GarageSectorRepositoryTest       : The following 1 profile is active: "test"
+2025-05-29T15:01:22.149-03:00 DEBUG 34184 --- [           main] o.s.boot.SpringApplication               : Loading source class com.estapar.parking.ParkingManagementApplication
+2025-05-29T15:01:22.168-03:00 DEBUG 34184 --- [           main] s.c.a.AnnotationConfigApplicationContext : Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@6b4fc2d1
+2025-05-29T15:01:22.184-03:00 DEBUG 34184 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor'
+2025-05-29T15:01:22.211-03:00 DEBUG 34184 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.internalCachingMetadataReaderFactory'
+2025-05-29T15:01:23.032-03:00  INFO 34184 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-29T15:01:23.064-03:00 DEBUG 34184 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.AutoConfigurationPackages'
+2025-05-29T15:01:23.105-03:00 DEBUG 34184 --- [           main] o.s.b.a.AutoConfigurationPackages        : @EnableAutoConfiguration was declared on a class in the package 'com.estapar.parking'. Automatic @Repository and @Entity scanning is enabled.
+2025-05-29T15:01:23.109-03:00 DEBUG 34184 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Scanning for JPA repositories in packages com.estapar.parking.
+2025-05-29T15:01:23.158-03:00 DEBUG 34184 --- [           main] o.s.d.r.c.RepositoryComponentProvider    : Identified candidate component class: file [C:\Users\actdigital\git\Estapar\target\classes\com\estapar\parking\repository\GarageSectorRepository.class]
+2025-05-29T15:01:23.158-03:00 DEBUG 34184 --- [           main] o.s.d.r.c.RepositoryComponentProvider    : Identified candidate component class: file [C:\Users\actdigital\git\Estapar\target\classes\com\estapar\parking\repository\ParkingEventRepository.class]
+2025-05-29T15:01:23.159-03:00 DEBUG 34184 --- [           main] o.s.d.r.c.RepositoryComponentProvider    : Identified candidate component class: file [C:\Users\actdigital\git\Estapar\target\classes\com\estapar\parking\repository\ParkingSpotRepository.class]
+2025-05-29T15:01:23.159-03:00 DEBUG 34184 --- [           main] o.s.d.r.c.RepositoryComponentProvider    : Identified candidate component class: file [C:\Users\actdigital\git\Estapar\target\classes\com\estapar\parking\repository\RevenueRepository.class]
+2025-05-29T15:01:23.344-03:00  INFO 34184 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 228 ms. Found 4 JPA repository interfaces.
+2025-05-29T15:01:23.506-03:00 DEBUG 34184 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.test.context.ImportsContextCustomizer$ImportsCleanupPostProcessor'
+2025-05-29T15:01:23.507-03:00 DEBUG 34184 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'embeddedDataSourceBeanFactoryPostProcessor'
+2025-05-29T15:01:23.532-03:00  INFO 34184 --- [           main] beddedDataSourceBeanFactoryPostProcessor : Replacing 'dataSource' DataSource bean with embedded version
+2025-05-29T15:01:23.759-03:00 DEBUG 34184 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.test.mock.mockito.MockitoPostProcessor'
+2025-05-29T15:01:23.760-03:00 DEBUG 34184 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'emBeanDefinitionRegistrarPostProcessor'
+2025-05-29T15:01:23.761-03:00 DEBUG 34184 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.sql.init.dependency.DatabaseInitializationDependencyConfigurer$DependsOnDatabaseInitializationPostProcessor'
+2025-05-29T15:01:23.829-03:00 DEBUG 34184 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerProcessor'
+2025-05-29T15:01:23.834-03:00 DEBUG 34184 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerFactory'
+2025-05-29T15:01:23.834-03:00 DEBUG 34184 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.transaction.config.internalTransactionalEventListenerFactory'
+2025-05-29T15:01:23.839-03:00 DEBUG 34184 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor'
+2025-05-29T15:01:23.842-03:00 DEBUG 34184 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.context.annotation.internalCommonAnnotationProcessor'
+2025-05-29T15:01:23.857-03:00 DEBUG 34184 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.context.annotation.internalPersistenceAnnotationProcessor'
+2025-05-29T15:01:23.857-03:00 DEBUG 34184 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.test.mock.mockito.MockitoPostProcessor$SpyPostProcessor'
+2025-05-29T15:01:23.864-03:00 DEBUG 34184 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'jdbcConnectionDetailsHikariBeanPostProcessor'
+2025-05-29T15:01:23.872-03:00 DEBUG 34184 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.context.properties.ConfigurationPropertiesBindingPostProcessor'
+2025-05-29T15:01:23.873-03:00 DEBUG 34184 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.context.internalConfigurationPropertiesBinder'
+2025-05-29T15:01:23.881-03:00 DEBUG 34184 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.aop.config.internalAutoProxyCreator'
+2025-05-29T15:01:23.920-03:00 DEBUG 34184 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'dataSourceScriptDatabaseInitializer'
+2025-05-29T15:01:23.922-03:00 DEBUG 34184 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.sql.init.DataSourceInitializationConfiguration'
+2025-05-29T15:01:23.925-03:00 DEBUG 34184 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
+2025-05-29T15:01:23.925-03:00 DEBUG 34184 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration'
+2025-05-29T15:01:23.944-03:00 DEBUG 34184 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'transactionAttributeSource'
+2025-05-29T15:01:23.949-03:00 DEBUG 34184 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'transactionInterceptor'
+2025-05-29T15:01:23.950-03:00 DEBUG 34184 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'transactionInterceptor' via factory method to bean named 'transactionAttributeSource'
+2025-05-29T15:01:23.964-03:00 DEBUG 34184 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'org.springframework.transaction.config.internalTransactionAdvisor' via factory method to bean named 'transactionAttributeSource'
+2025-05-29T15:01:23.965-03:00 DEBUG 34184 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'org.springframework.transaction.config.internalTransactionAdvisor' via factory method to bean named 'transactionInterceptor'
+2025-05-29T15:01:23.983-03:00 DEBUG 34184 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'dataSource'
+2025-05-29T15:01:24.027-03:00  INFO 34184 --- [           main] o.s.j.d.e.EmbeddedDatabaseFactory        : Starting embedded database: url='jdbc:h2:mem:f41f4bc9-286b-4f9a-a0e4-95b7879cd638;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2025-05-29T15:01:24.045-03:00 DEBUG 34184 --- [           main] o.s.jdbc.datasource.DataSourceUtils      : Fetching JDBC Connection from DataSource
+2025-05-29T15:01:24.045-03:00 DEBUG 34184 --- [           main] o.s.j.datasource.SimpleDriverDataSource  : Creating new JDBC Driver Connection to [jdbc:h2:mem:f41f4bc9-286b-4f9a-a0e4-95b7879cd638;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false]
+2025-05-29T15:01:24.463-03:00 DEBUG 34184 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'spring.sql.init-org.springframework.boot.autoconfigure.sql.init.SqlInitializationProperties'
+2025-05-29T15:01:24.476-03:00 DEBUG 34184 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.context.properties.BoundConfigurationProperties'
+2025-05-29T15:01:24.514-03:00 DEBUG 34184 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'dataSourceScriptDatabaseInitializer' via factory method to bean named 'dataSource'
+2025-05-29T15:01:24.514-03:00 DEBUG 34184 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'dataSourceScriptDatabaseInitializer' via factory method to bean named 'spring.sql.init-org.springframework.boot.autoconfigure.sql.init.SqlInitializationProperties'
+2025-05-29T15:01:24.537-03:00 DEBUG 34184 --- [           main] o.s.jdbc.datasource.DataSourceUtils      : Fetching JDBC Connection from DataSource
+2025-05-29T15:01:24.537-03:00 DEBUG 34184 --- [           main] o.s.j.datasource.SimpleDriverDataSource  : Creating new JDBC Driver Connection to [jdbc:h2:mem:f41f4bc9-286b-4f9a-a0e4-95b7879cd638;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false]
+2025-05-29T15:01:24.560-03:00 DEBUG 34184 --- [           main] o.s.jdbc.datasource.DataSourceUtils      : Fetching JDBC Connection from DataSource
+2025-05-29T15:01:24.560-03:00 DEBUG 34184 --- [           main] o.s.j.datasource.SimpleDriverDataSource  : Creating new JDBC Driver Connection to [jdbc:h2:mem:f41f4bc9-286b-4f9a-a0e4-95b7879cd638;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false]
+2025-05-29T15:01:24.563-03:00 DEBUG 34184 --- [           main] o.s.jdbc.datasource.init.ScriptUtils     : Executing SQL script from file [C:\Users\actdigital\git\Estapar\target\classes\schema.sql]
+2025-05-29T15:01:24.618-03:00 DEBUG 34184 --- [           main] o.s.jdbc.datasource.init.ScriptUtils     : 0 returned as update count for SQL: CREATE TABLE IF NOT EXISTS garage_sector ( id BIGSERIAL PRIMARY KEY, sector VARCHAR(50) NOT NULL UNIQUE, base_price DECIMAL(10,2) NOT NULL, max_capacity INTEGER NOT NULL, open_hour TIME NOT NULL, close_hour TIME NOT NULL, duration_limit_minutes INTEGER NOT NULL )
+2025-05-29T15:01:24.661-03:00 DEBUG 34184 --- [           main] o.s.jdbc.datasource.init.ScriptUtils     : 0 returned as update count for SQL: CREATE TABLE IF NOT EXISTS spot ( id VARCHAR(50) PRIMARY KEY, sector_id BIGINT NOT NULL, latitude DOUBLE PRECISION NOT NULL, longitude DOUBLE PRECISION NOT NULL, FOREIGN KEY (sector_id) REFERENCES garage_sector(id) )
+2025-05-29T15:01:24.665-03:00 DEBUG 34184 --- [           main] o.s.jdbc.datasource.init.ScriptUtils     : 0 returned as update count for SQL: CREATE TABLE IF NOT EXISTS parking_event ( id BIGSERIAL PRIMARY KEY, spot_id VARCHAR(50) NOT NULL, event_type VARCHAR(20) NOT NULL, event_time TIMESTAMP NOT NULL, FOREIGN KEY (spot_id) REFERENCES spot(id) )
+2025-05-29T15:01:24.668-03:00 DEBUG 34184 --- [           main] o.s.jdbc.datasource.init.ScriptUtils     : 0 returned as update count for SQL: CREATE INDEX IF NOT EXISTS idx_spot_sector ON spot(sector_id)
+2025-05-29T15:01:24.670-03:00 DEBUG 34184 --- [           main] o.s.jdbc.datasource.init.ScriptUtils     : 0 returned as update count for SQL: CREATE INDEX IF NOT EXISTS idx_parking_event_spot ON parking_event(spot_id)
+2025-05-29T15:01:24.671-03:00 DEBUG 34184 --- [           main] o.s.jdbc.datasource.init.ScriptUtils     : 0 returned as update count for SQL: CREATE INDEX IF NOT EXISTS idx_parking_event_time ON parking_event(event_time)
+2025-05-29T15:01:24.677-03:00 DEBUG 34184 --- [           main] o.s.jdbc.datasource.init.ScriptUtils     : Executed SQL script from file [C:\Users\actdigital\git\Estapar\target\classes\schema.sql] in 105 ms.
+2025-05-29T15:01:24.679-03:00 DEBUG 34184 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'entityManagerFactory'
+2025-05-29T15:01:24.679-03:00 DEBUG 34184 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaConfiguration'
+2025-05-29T15:01:24.681-03:00 DEBUG 34184 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'spring.jpa-org.springframework.boot.autoconfigure.orm.jpa.JpaProperties'
+2025-05-29T15:01:24.698-03:00 DEBUG 34184 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'spring.jpa.hibernate-org.springframework.boot.autoconfigure.orm.jpa.HibernateProperties'
+2025-05-29T15:01:24.704-03:00 DEBUG 34184 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaConfiguration' via constructor to bean named 'dataSource'
+2025-05-29T15:01:24.705-03:00 DEBUG 34184 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaConfiguration' via constructor to bean named 'spring.jpa-org.springframework.boot.autoconfigure.orm.jpa.JpaProperties'
+2025-05-29T15:01:24.705-03:00 DEBUG 34184 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaConfiguration' via constructor to bean named 'org.springframework.beans.factory.support.DefaultListableBeanFactory@6be6931f'
+2025-05-29T15:01:24.705-03:00 DEBUG 34184 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaConfiguration' via constructor to bean named 'spring.jpa.hibernate-org.springframework.boot.autoconfigure.orm.jpa.HibernateProperties'
+2025-05-29T15:01:24.717-03:00 DEBUG 34184 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'hikariPoolDataSourceMetadataProvider'
+2025-05-29T15:01:24.719-03:00 DEBUG 34184 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.jdbc.metadata.DataSourcePoolMetadataProvidersConfiguration$HikariPoolDataSourceMetadataProviderConfiguration'
+2025-05-29T15:01:24.736-03:00 DEBUG 34184 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'entityManagerFactoryBuilder'
+2025-05-29T15:01:24.739-03:00 DEBUG 34184 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'jpaVendorAdapter'
+2025-05-29T15:01:24.788-03:00 DEBUG 34184 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'entityManagerFactoryBuilder' via factory method to bean named 'jpaVendorAdapter'
+2025-05-29T15:01:24.796-03:00 DEBUG 34184 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'persistenceManagedTypes'
+2025-05-29T15:01:24.804-03:00 DEBUG 34184 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'persistenceManagedTypes' via factory method to bean named 'org.springframework.beans.factory.support.DefaultListableBeanFactory@6be6931f'
+2025-05-29T15:01:24.804-03:00 DEBUG 34184 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'persistenceManagedTypes' via factory method to bean named 'org.springframework.context.annotation.AnnotationConfigApplicationContext@6b4fc2d1'
+2025-05-29T15:01:24.825-03:00 DEBUG 34184 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'entityManagerFactory' via factory method to bean named 'entityManagerFactoryBuilder'
+2025-05-29T15:01:24.825-03:00 DEBUG 34184 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'entityManagerFactory' via factory method to bean named 'persistenceManagedTypes'
+2025-05-29T15:01:24.873-03:00 DEBUG 34184 --- [           main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2025-05-29T15:01:24.927-03:00  INFO 34184 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-29T15:01:25.106-03:00  INFO 34184 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2025-05-29T15:01:25.181-03:00  INFO 34184 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-05-29T15:01:25.414-03:00  INFO 34184 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-29T15:01:25.460-03:00 DEBUG 34184 --- [           main] o.s.j.datasource.SimpleDriverDataSource  : Creating new JDBC Driver Connection to [jdbc:h2:mem:f41f4bc9-286b-4f9a-a0e4-95b7879cd638;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false]
+2025-05-29T15:01:25.487-03:00  WARN 34184 --- [           main] org.hibernate.dialect.Dialect            : HHH000511: The 2.2.0 version for [org.hibernate.dialect.PostgreSQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 12.0.0. Check the community dialects project for available legacy versions.
+2025-05-29T15:01:25.498-03:00  WARN 34184 --- [           main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-05-29T15:01:27.016-03:00  INFO 34184 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-05-29T15:01:27.037-03:00 DEBUG 34184 --- [           main] org.hibernate.SQL                        : 
+    alter table if exists revenues 
+       drop constraint if exists FKnwaj1opuwaeb5f2mmyjvxo5vv
+Hibernate: 
+    alter table if exists revenues 
+       drop constraint if exists FKnwaj1opuwaeb5f2mmyjvxo5vv
+2025-05-29T15:01:27.038-03:00 DEBUG 34184 --- [           main] o.s.j.datasource.SimpleDriverDataSource  : Creating new JDBC Driver Connection to [jdbc:h2:mem:f41f4bc9-286b-4f9a-a0e4-95b7879cd638;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false]
+2025-05-29T15:01:27.039-03:00 DEBUG 34184 --- [           main] org.hibernate.SQL                        : 
+    drop table if exists garage_sectors cascade
+Hibernate: 
+    drop table if exists garage_sectors cascade
+2025-05-29T15:01:27.040-03:00 DEBUG 34184 --- [           main] org.hibernate.SQL                        : 
+    drop table if exists parking_events cascade
+Hibernate: 
+    drop table if exists parking_events cascade
+2025-05-29T15:01:27.040-03:00 DEBUG 34184 --- [           main] org.hibernate.SQL                        : 
+    drop table if exists parking_spots cascade
+Hibernate: 
+    drop table if exists parking_spots cascade
+2025-05-29T15:01:27.040-03:00 DEBUG 34184 --- [           main] org.hibernate.SQL                        : 
+    drop table if exists revenues cascade
+Hibernate: 
+    drop table if exists revenues cascade
+2025-05-29T15:01:27.052-03:00 DEBUG 34184 --- [           main] org.hibernate.SQL                        : 
+    create table garage_sectors (
+        base_price numeric(38,2) not null,
+        close_hour time(6) not null,
+        current_occupancy integer not null,
+        duration_limit_minutes integer not null,
+        max_capacity integer not null,
+        open_hour time(6) not null,
+        id varchar(255) not null,
+        primary key (id)
+    )
+Hibernate: 
+    create table garage_sectors (
+        base_price numeric(38,2) not null,
+        close_hour time(6) not null,
+        current_occupancy integer not null,
+        duration_limit_minutes integer not null,
+        max_capacity integer not null,
+        open_hour time(6) not null,
+        id varchar(255) not null,
+        primary key (id)
+    )
+2025-05-29T15:01:27.052-03:00 DEBUG 34184 --- [           main] o.s.j.datasource.SimpleDriverDataSource  : Creating new JDBC Driver Connection to [jdbc:h2:mem:f41f4bc9-286b-4f9a-a0e4-95b7879cd638;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false]
+2025-05-29T15:01:27.054-03:00 DEBUG 34184 --- [           main] org.hibernate.SQL                        : 
+    create table parking_events (
+        latitude float(53),
+        longitude float(53),
+        price numeric(38,2),
+        id bigserial not null,
+        timestamp timestamp(6) not null,
+        license_plate varchar(255) not null,
+        sector_id varchar(255),
+        type varchar(255) not null,
+        primary key (id)
+    )
+Hibernate: 
+    create table parking_events (
+        latitude float(53),
+        longitude float(53),
+        price numeric(38,2),
+        id bigserial not null,
+        timestamp timestamp(6) not null,
+        license_plate varchar(255) not null,
+        sector_id varchar(255),
+        type varchar(255) not null,
+        primary key (id)
+    )
+2025-05-29T15:01:27.055-03:00 DEBUG 34184 --- [           main] org.hibernate.SQL                        : 
+    create table parking_spots (
+        latitude float(53) not null,
+        longitude float(53) not null,
+        occupied boolean not null,
+        entry_time timestamp(6),
+        id bigserial not null,
+        license_plate varchar(255),
+        sector_id varchar(255) not null,
+        primary key (id),
+        unique (license_plate, entry_time),
+        unique (latitude, longitude, entry_time)
+    )
+Hibernate: 
+    create table parking_spots (
+        latitude float(53) not null,
+        longitude float(53) not null,
+        occupied boolean not null,
+        entry_time timestamp(6),
+        id bigserial not null,
+        license_plate varchar(255),
+        sector_id varchar(255) not null,
+        primary key (id),
+        unique (license_plate, entry_time),
+        unique (latitude, longitude, entry_time)
+    )
+2025-05-29T15:01:27.058-03:00 DEBUG 34184 --- [           main] org.hibernate.SQL                        : 
+    create table revenues (
+        amount numeric(38,2) not null,
+        id bigserial not null,
+        timestamp timestamp(6) not null,
+        currency varchar(255) not null,
+        sector_id varchar(255) not null,
+        primary key (id)
+    )
+Hibernate: 
+    create table revenues (
+        amount numeric(38,2) not null,
+        id bigserial not null,
+        timestamp timestamp(6) not null,
+        currency varchar(255) not null,
+        sector_id varchar(255) not null,
+        primary key (id)
+    )
+2025-05-29T15:01:27.061-03:00 DEBUG 34184 --- [           main] org.hibernate.SQL                        : 
+    alter table if exists revenues 
+       add constraint FKnwaj1opuwaeb5f2mmyjvxo5vv 
+       foreign key (sector_id) 
+       references garage_sectors
+Hibernate: 
+    alter table if exists revenues 
+       add constraint FKnwaj1opuwaeb5f2mmyjvxo5vv 
+       foreign key (sector_id) 
+       references garage_sectors
+2025-05-29T15:01:27.094-03:00  INFO 34184 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-29T15:01:27.141-03:00 DEBUG 34184 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'parkingManagementApplication'
+2025-05-29T15:01:27.153-03:00 DEBUG 34184 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.test.autoconfigure.jdbc.TestDatabaseAutoConfiguration'
+2025-05-29T15:01:27.173-03:00 DEBUG 34184 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration$Hikari'
+2025-05-29T15:01:27.178-03:00 DEBUG 34184 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration$PooledDataSourceConfiguration'
+2025-05-29T15:01:27.180-03:00 DEBUG 34184 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'jdbcConnectionDetails'
+2025-05-29T15:01:27.184-03:00 DEBUG 34184 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties'
+2025-05-29T15:01:27.208-03:00 DEBUG 34184 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'jdbcConnectionDetails' via factory method to bean named 'spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties'
+2025-05-29T15:01:27.212-03:00 DEBUG 34184 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.jdbc.metadata.DataSourcePoolMetadataProvidersConfiguration'
+2025-05-29T15:01:27.214-03:00 DEBUG 34184 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration'
+2025-05-29T15:01:27.217-03:00 DEBUG 34184 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.context.properties.EnableConfigurationPropertiesRegistrar.methodValidationExcludeFilter'
+2025-05-29T15:01:27.233-03:00 DEBUG 34184 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$PersistenceManagedTypesConfiguration'
+2025-05-29T15:01:27.237-03:00 DEBUG 34184 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'transactionManager'
+2025-05-29T15:01:27.271-03:00 DEBUG 34184 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration'
+2025-05-29T15:01:27.273-03:00 DEBUG 34184 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.data.jpa.JpaRepositoriesAutoConfiguration'
+2025-05-29T15:01:27.275-03:00 DEBUG 34184 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'jpaSharedEM_entityManagerFactory'
+2025-05-29T15:01:27.319-03:00 DEBUG 34184 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.data.jpa.util.JpaMetamodelCacheCleanup'
+2025-05-29T15:01:27.320-03:00 DEBUG 34184 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.data.jpa.repository.support.JpaEvaluationContextExtension'
+2025-05-29T15:01:27.323-03:00 DEBUG 34184 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'jpa.named-queries#0'
+2025-05-29T15:01:27.331-03:00 DEBUG 34184 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'jpa.ParkingEventRepository.fragments#0'
+2025-05-29T15:01:27.340-03:00 DEBUG 34184 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'parkingEventRepository'
+2025-05-29T15:01:27.403-03:00 DEBUG 34184 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'jpaMappingContext'
+2025-05-29T15:01:27.405-03:00 DEBUG 34184 --- [           main] .c.JpaMetamodelMappingContextFactoryBean : Initializing JpaMetamodelMappingContext…
+2025-05-29T15:01:27.433-03:00 DEBUG 34184 --- [           main] .c.JpaMetamodelMappingContextFactoryBean : Finished initializing JpaMetamodelMappingContext
+2025-05-29T15:01:27.493-03:00 DEBUG 34184 --- [           main] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2025-05-29T15:01:27.572-03:00 DEBUG 34184 --- [           main] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2025-05-29T15:01:27.680-03:00 DEBUG 34184 --- [           main] o.s.d.r.c.s.RepositoryFactorySupport     : Initializing repository instance for com.estapar.parking.repository.ParkingEventRepository…
+2025-05-29T15:01:27.722-03:00 DEBUG 34184 --- [           main] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2025-05-29T15:01:27.988-03:00  INFO 34184 --- [           main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-05-29T15:01:28.488-03:00 DEBUG 34184 --- [           main] o.s.d.jpa.repository.query.NamedQuery    : Did not find named query ParkingEvent.calculateRevenueByDateAndSector.count
+2025-05-29T15:01:28.492-03:00 DEBUG 34184 --- [           main] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2025-05-29T15:01:29.201-03:00 DEBUG 34184 --- [           main] o.s.d.jpa.repository.query.NamedQuery    : Looking up named query ParkingEvent.findByLicensePlateOrderByTimestampDesc
+2025-05-29T15:01:29.202-03:00 DEBUG 34184 --- [           main] o.s.d.jpa.repository.query.NamedQuery    : Did not find named query ParkingEvent.findByLicensePlateOrderByTimestampDesc
+2025-05-29T15:01:29.205-03:00 DEBUG 34184 --- [           main] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2025-05-29T15:01:29.250-03:00 DEBUG 34184 --- [           main] o.s.d.jpa.repository.query.NamedQuery    : Looking up named query ParkingEvent.findBySectorIdOrderByTimestampDesc
+2025-05-29T15:01:29.251-03:00 DEBUG 34184 --- [           main] o.s.d.jpa.repository.query.NamedQuery    : Did not find named query ParkingEvent.findBySectorIdOrderByTimestampDesc
+2025-05-29T15:01:29.251-03:00 DEBUG 34184 --- [           main] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2025-05-29T15:01:29.252-03:00 DEBUG 34184 --- [           main] o.s.d.jpa.repository.query.NamedQuery    : Looking up named query ParkingEvent.findByLicensePlateAndTypeOrderByTimestampDesc
+2025-05-29T15:01:29.252-03:00 DEBUG 34184 --- [           main] o.s.d.jpa.repository.query.NamedQuery    : Did not find named query ParkingEvent.findByLicensePlateAndTypeOrderByTimestampDesc
+2025-05-29T15:01:29.253-03:00 DEBUG 34184 --- [           main] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2025-05-29T15:01:29.259-03:00 DEBUG 34184 --- [           main] o.s.d.r.c.s.RepositoryFactorySupport     : Finished creation of repository instance for com.estapar.parking.repository.ParkingEventRepository.
+2025-05-29T15:01:29.263-03:00 DEBUG 34184 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'jpa.named-queries#1'
+2025-05-29T15:01:29.266-03:00 DEBUG 34184 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'jpa.ParkingSpotRepository.fragments#0'
+2025-05-29T15:01:29.266-03:00 DEBUG 34184 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'parkingSpotRepository'
+2025-05-29T15:01:29.275-03:00 DEBUG 34184 --- [           main] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2025-05-29T15:01:29.294-03:00 DEBUG 34184 --- [           main] o.s.d.r.c.s.RepositoryFactorySupport     : Initializing repository instance for com.estapar.parking.repository.ParkingSpotRepository…
+2025-05-29T15:01:29.295-03:00 DEBUG 34184 --- [           main] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2025-05-29T15:01:29.351-03:00 DEBUG 34184 --- [           main] o.s.d.jpa.repository.query.NamedQuery    : Did not find named query ParkingSpot.findBySectorIdAndEntryTime.count
+2025-05-29T15:01:29.351-03:00 DEBUG 34184 --- [           main] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2025-05-29T15:01:29.360-03:00 DEBUG 34184 --- [           main] o.s.d.jpa.repository.query.NamedQuery    : Looking up named query ParkingSpot.findBySectorIdAndOccupiedTrue
+2025-05-29T15:01:29.360-03:00 DEBUG 34184 --- [           main] o.s.d.jpa.repository.query.NamedQuery    : Did not find named query ParkingSpot.findBySectorIdAndOccupiedTrue
+2025-05-29T15:01:29.361-03:00 DEBUG 34184 --- [           main] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2025-05-29T15:01:29.364-03:00 DEBUG 34184 --- [           main] o.s.d.jpa.repository.query.NamedQuery    : Looking up named query ParkingSpot.findFirstBySectorIdAndOccupiedFalse
+2025-05-29T15:01:29.364-03:00 DEBUG 34184 --- [           main] o.s.d.jpa.repository.query.NamedQuery    : Did not find named query ParkingSpot.findFirstBySectorIdAndOccupiedFalse
+2025-05-29T15:01:29.365-03:00 DEBUG 34184 --- [           main] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2025-05-29T15:01:29.366-03:00 DEBUG 34184 --- [           main] o.s.d.jpa.repository.query.NamedQuery    : Looking up named query ParkingSpot.findByLatitudeAndLongitude
+2025-05-29T15:01:29.367-03:00 DEBUG 34184 --- [           main] o.s.d.jpa.repository.query.NamedQuery    : Did not find named query ParkingSpot.findByLatitudeAndLongitude
+2025-05-29T15:01:29.367-03:00 DEBUG 34184 --- [           main] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2025-05-29T15:01:29.374-03:00 DEBUG 34184 --- [           main] o.s.d.jpa.repository.query.NamedQuery    : Looking up named query ParkingSpot.findBySectorIdAndOccupiedFalse
+2025-05-29T15:01:29.376-03:00 DEBUG 34184 --- [           main] o.s.d.jpa.repository.query.NamedQuery    : Did not find named query ParkingSpot.findBySectorIdAndOccupiedFalse
+2025-05-29T15:01:29.376-03:00 DEBUG 34184 --- [           main] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2025-05-29T15:01:29.380-03:00 DEBUG 34184 --- [           main] o.s.d.jpa.repository.query.NamedQuery    : Looking up named query ParkingSpot.findByLicensePlate
+2025-05-29T15:01:29.384-03:00 DEBUG 34184 --- [           main] o.s.d.jpa.repository.query.NamedQuery    : Did not find named query ParkingSpot.findByLicensePlate
+2025-05-29T15:01:29.385-03:00 DEBUG 34184 --- [           main] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2025-05-29T15:01:29.418-03:00 DEBUG 34184 --- [           main] o.s.d.jpa.repository.query.NamedQuery    : Did not find named query ParkingSpot.existsBySectorIdAndEntryTime.count
+2025-05-29T15:01:29.419-03:00 DEBUG 34184 --- [           main] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2025-05-29T15:01:29.456-03:00 DEBUG 34184 --- [           main] o.s.d.r.c.s.RepositoryFactorySupport     : Finished creation of repository instance for com.estapar.parking.repository.ParkingSpotRepository.
+2025-05-29T15:01:29.457-03:00 DEBUG 34184 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'jpa.named-queries#2'
+2025-05-29T15:01:29.459-03:00 DEBUG 34184 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'jpa.RevenueRepository.fragments#0'
+2025-05-29T15:01:29.460-03:00 DEBUG 34184 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'revenueRepository'
+2025-05-29T15:01:29.461-03:00 DEBUG 34184 --- [           main] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2025-05-29T15:01:29.471-03:00 DEBUG 34184 --- [           main] o.s.d.r.c.s.RepositoryFactorySupport     : Initializing repository instance for com.estapar.parking.repository.RevenueRepository…
+2025-05-29T15:01:29.472-03:00 DEBUG 34184 --- [           main] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2025-05-29T15:01:29.483-03:00 DEBUG 34184 --- [           main] o.s.d.jpa.repository.query.NamedQuery    : Looking up named query Revenue.findBySectorIdAndTimestampBetween
+2025-05-29T15:01:29.483-03:00 DEBUG 34184 --- [           main] o.s.d.jpa.repository.query.NamedQuery    : Did not find named query Revenue.findBySectorIdAndTimestampBetween
+2025-05-29T15:01:29.484-03:00 DEBUG 34184 --- [           main] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2025-05-29T15:01:29.493-03:00 DEBUG 34184 --- [           main] o.s.d.r.c.s.RepositoryFactorySupport     : Finished creation of repository instance for com.estapar.parking.repository.RevenueRepository.
+2025-05-29T15:01:29.494-03:00 DEBUG 34184 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'jpa.named-queries#3'
+2025-05-29T15:01:29.495-03:00 DEBUG 34184 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'jpa.GarageSectorRepository.fragments#0'
+2025-05-29T15:01:29.495-03:00 DEBUG 34184 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'garageSectorRepository'
+2025-05-29T15:01:29.497-03:00 DEBUG 34184 --- [           main] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2025-05-29T15:01:29.498-03:00 DEBUG 34184 --- [           main] o.s.d.r.c.s.RepositoryFactorySupport     : Initializing repository instance for com.estapar.parking.repository.GarageSectorRepository…
+2025-05-29T15:01:29.499-03:00 DEBUG 34184 --- [           main] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2025-05-29T15:01:29.512-03:00 DEBUG 34184 --- [           main] o.s.d.r.c.s.RepositoryFactorySupport     : Finished creation of repository instance for com.estapar.parking.repository.GarageSectorRepository.
+2025-05-29T15:01:29.512-03:00 DEBUG 34184 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'data-jpa.repository-aot-processor#0'
+2025-05-29T15:01:29.526-03:00 DEBUG 34184 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.jdbc.JdbcTemplateConfiguration'
+2025-05-29T15:01:29.526-03:00 DEBUG 34184 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'jdbcTemplate'
+2025-05-29T15:01:29.526-03:00 DEBUG 34184 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'spring.jdbc-org.springframework.boot.autoconfigure.jdbc.JdbcProperties'
+2025-05-29T15:01:29.527-03:00 DEBUG 34184 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'jdbcTemplate' via factory method to bean named 'dataSource'
+2025-05-29T15:01:29.528-03:00 DEBUG 34184 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'jdbcTemplate' via factory method to bean named 'spring.jdbc-org.springframework.boot.autoconfigure.jdbc.JdbcProperties'
+2025-05-29T15:01:29.563-03:00 DEBUG 34184 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.jdbc.NamedParameterJdbcTemplateConfiguration'
+2025-05-29T15:01:29.564-03:00 DEBUG 34184 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'namedParameterJdbcTemplate'
+2025-05-29T15:01:29.566-03:00 DEBUG 34184 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'namedParameterJdbcTemplate' via factory method to bean named 'jdbcTemplate'
+2025-05-29T15:01:29.586-03:00 DEBUG 34184 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.jdbc.JdbcTemplateAutoConfiguration'
+2025-05-29T15:01:29.589-03:00 DEBUG 34184 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.jdbc.JdbcClientAutoConfiguration'
+2025-05-29T15:01:29.591-03:00 DEBUG 34184 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'jdbcClient'
+2025-05-29T15:01:29.593-03:00 DEBUG 34184 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'jdbcClient' via factory method to bean named 'namedParameterJdbcTemplate'
+2025-05-29T15:01:29.613-03:00 DEBUG 34184 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.sql.init.SqlInitializationAutoConfiguration'
+2025-05-29T15:01:29.619-03:00 DEBUG 34184 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration$JdbcTransactionManagerConfiguration'
+2025-05-29T15:01:29.624-03:00 DEBUG 34184 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration'
+2025-05-29T15:01:29.626-03:00 DEBUG 34184 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration$EnableTransactionManagementConfiguration$CglibAutoProxyConfiguration'
+2025-05-29T15:01:29.629-03:00 DEBUG 34184 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration$EnableTransactionManagementConfiguration'
+2025-05-29T15:01:29.636-03:00 DEBUG 34184 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration$TransactionTemplateConfiguration'
+2025-05-29T15:01:29.640-03:00 DEBUG 34184 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'transactionTemplate'
+2025-05-29T15:01:29.641-03:00 DEBUG 34184 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'transactionTemplate' via factory method to bean named 'transactionManager'
+2025-05-29T15:01:29.647-03:00 DEBUG 34184 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration'
+2025-05-29T15:01:29.648-03:00 DEBUG 34184 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManagerAutoConfiguration'
+2025-05-29T15:01:29.649-03:00 DEBUG 34184 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'testEntityManager'
+2025-05-29T15:01:29.650-03:00 DEBUG 34184 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'testEntityManager' via factory method to bean named 'entityManagerFactory'
+2025-05-29T15:01:29.665-03:00 DEBUG 34184 --- [           main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase -2147483647
+2025-05-29T15:01:29.665-03:00 DEBUG 34184 --- [           main] o.s.c.support.DefaultLifecycleProcessor  : Successfully started bean 'springBootLoggingLifecycle'
+2025-05-29T15:01:29.673-03:00 DEBUG 34184 --- [           main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+
+============================
+CONDITIONS EVALUATION REPORT
+============================
+
+
+Positive matches:
+-----------------
+
+   DataSourceAutoConfiguration matched:
+      - @ConditionalOnClass found required classes 'javax.sql.DataSource', 'org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType' (OnClassCondition)
+      - @ConditionalOnMissingBean (types: io.r2dbc.spi.ConnectionFactory; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   DataSourceAutoConfiguration.PooledDataSourceConfiguration matched:
+      - AnyNestedCondition 1 matched 1 did not; NestedCondition on DataSourceAutoConfiguration.PooledDataSourceCondition.PooledDataSourceAvailable PooledDataSource found supported DataSource; NestedCondition on DataSourceAutoConfiguration.PooledDataSourceCondition.ExplicitType @ConditionalOnProperty (spring.datasource.type) did not find property 'type' (DataSourceAutoConfiguration.PooledDataSourceCondition)
+      - @ConditionalOnMissingBean (types: javax.sql.DataSource,javax.sql.XADataSource; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   DataSourceAutoConfiguration.PooledDataSourceConfiguration#jdbcConnectionDetails matched:
+      - @ConditionalOnMissingBean (types: org.springframework.boot.autoconfigure.jdbc.JdbcConnectionDetails; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   DataSourceConfiguration.Hikari matched:
+      - @ConditionalOnClass found required class 'com.zaxxer.hikari.HikariDataSource' (OnClassCondition)
+      - @ConditionalOnProperty (spring.datasource.type=com.zaxxer.hikari.HikariDataSource) matched (OnPropertyCondition)
+      - @ConditionalOnMissingBean (types: javax.sql.DataSource; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   DataSourceInitializationConfiguration matched:
+      - @ConditionalOnClass found required class 'org.springframework.jdbc.datasource.init.DatabasePopulator' (OnClassCondition)
+      - @ConditionalOnSingleCandidate (types: javax.sql.DataSource; SearchStrategy: all) found a single bean 'dataSource'; @ConditionalOnMissingBean (types: org.springframework.boot.autoconfigure.sql.init.SqlDataSourceScriptDatabaseInitializer,org.springframework.boot.autoconfigure.sql.init.SqlR2dbcScriptDatabaseInitializer; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   DataSourcePoolMetadataProvidersConfiguration.HikariPoolDataSourceMetadataProviderConfiguration matched:
+      - @ConditionalOnClass found required class 'com.zaxxer.hikari.HikariDataSource' (OnClassCondition)
+
+   DataSourceTransactionManagerAutoConfiguration matched:
+      - @ConditionalOnClass found required classes 'org.springframework.jdbc.core.JdbcTemplate', 'org.springframework.transaction.TransactionManager' (OnClassCondition)
+
+   DataSourceTransactionManagerAutoConfiguration.JdbcTransactionManagerConfiguration matched:
+      - @ConditionalOnSingleCandidate (types: javax.sql.DataSource; SearchStrategy: all) found a single bean 'dataSource' (OnBeanCondition)
+
+   HibernateJpaAutoConfiguration matched:
+      - @ConditionalOnClass found required classes 'org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean', 'jakarta.persistence.EntityManager', 'org.hibernate.engine.spi.SessionImplementor' (OnClassCondition)
+
+   HibernateJpaConfiguration matched:
+      - @ConditionalOnSingleCandidate (types: javax.sql.DataSource; SearchStrategy: all) found a single bean 'dataSource' (OnBeanCondition)
+
+   JdbcClientAutoConfiguration matched:
+      - @ConditionalOnSingleCandidate (types: org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate; SearchStrategy: all) found a single bean 'namedParameterJdbcTemplate'; @ConditionalOnMissingBean (types: org.springframework.jdbc.core.simple.JdbcClient; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   JdbcTemplateAutoConfiguration matched:
+      - @ConditionalOnClass found required classes 'javax.sql.DataSource', 'org.springframework.jdbc.core.JdbcTemplate' (OnClassCondition)
+      - @ConditionalOnSingleCandidate (types: javax.sql.DataSource; SearchStrategy: all) found a single bean 'dataSource' (OnBeanCondition)
+
+   JdbcTemplateConfiguration matched:
+      - @ConditionalOnMissingBean (types: org.springframework.jdbc.core.JdbcOperations; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   JpaBaseConfiguration#entityManagerFactory matched:
+      - @ConditionalOnMissingBean (types: org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean,jakarta.persistence.EntityManagerFactory; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   JpaBaseConfiguration#entityManagerFactoryBuilder matched:
+      - @ConditionalOnMissingBean (types: org.springframework.boot.orm.jpa.EntityManagerFactoryBuilder; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   JpaBaseConfiguration#jpaVendorAdapter matched:
+      - @ConditionalOnMissingBean (types: org.springframework.orm.jpa.JpaVendorAdapter; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   JpaBaseConfiguration#transactionManager matched:
+      - @ConditionalOnMissingBean (types: org.springframework.transaction.TransactionManager; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   JpaBaseConfiguration.PersistenceManagedTypesConfiguration matched:
+      - @ConditionalOnMissingBean (types: org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean,jakarta.persistence.EntityManagerFactory; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   JpaBaseConfiguration.PersistenceManagedTypesConfiguration#persistenceManagedTypes matched:
+      - @ConditionalOnMissingBean (types: org.springframework.orm.jpa.persistenceunit.PersistenceManagedTypes; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   JpaRepositoriesAutoConfiguration matched:
+      - @ConditionalOnClass found required class 'org.springframework.data.jpa.repository.JpaRepository' (OnClassCondition)
+      - @ConditionalOnProperty (spring.data.jpa.repositories.enabled=true) matched (OnPropertyCondition)
+      - @ConditionalOnBean (types: javax.sql.DataSource; SearchStrategy: all) found bean 'dataSource'; @ConditionalOnMissingBean (types: org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean,org.springframework.data.jpa.repository.config.JpaRepositoryConfigExtension; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   NamedParameterJdbcTemplateConfiguration matched:
+      - @ConditionalOnSingleCandidate (types: org.springframework.jdbc.core.JdbcTemplate; SearchStrategy: all) found a single bean 'jdbcTemplate'; @ConditionalOnMissingBean (types: org.springframework.jdbc.core.namedparam.NamedParameterJdbcOperations; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   NoOpCacheConfiguration matched:
+      - Cache org.springframework.boot.autoconfigure.cache.NoOpCacheConfiguration NONE cache type (CacheCondition)
+
+   SqlInitializationAutoConfiguration matched:
+      - @ConditionalOnProperty (spring.sql.init.enabled) matched (OnPropertyCondition)
+      - NoneNestedConditions 0 matched 1 did not; NestedCondition on SqlInitializationAutoConfiguration.SqlInitializationModeCondition.ModeIsNever @ConditionalOnProperty (spring.sql.init.mode=never) did not find property 'mode' (SqlInitializationAutoConfiguration.SqlInitializationModeCondition)
+
+   TestDatabaseAutoConfiguration#embeddedDataSourceBeanFactoryPostProcessor matched:
+      - @ConditionalOnProperty (spring.test.database.replace=ANY) matched (OnPropertyCondition)
+
+   TestEntityManagerAutoConfiguration matched:
+      - @ConditionalOnClass found required class 'jakarta.persistence.EntityManagerFactory' (OnClassCondition)
+
+   TestEntityManagerAutoConfiguration#testEntityManager matched:
+      - @ConditionalOnMissingBean (types: org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   TransactionAutoConfiguration matched:
+      - @ConditionalOnClass found required class 'org.springframework.transaction.PlatformTransactionManager' (OnClassCondition)
+
+   TransactionAutoConfiguration.EnableTransactionManagementConfiguration matched:
+      - @ConditionalOnBean (types: org.springframework.transaction.TransactionManager; SearchStrategy: all) found bean 'transactionManager'; @ConditionalOnMissingBean (types: org.springframework.transaction.annotation.AbstractTransactionManagementConfiguration; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   TransactionAutoConfiguration.EnableTransactionManagementConfiguration.CglibAutoProxyConfiguration matched:
+      - @ConditionalOnProperty (spring.aop.proxy-target-class=true) matched (OnPropertyCondition)
+
+   TransactionAutoConfiguration.TransactionTemplateConfiguration matched:
+      - @ConditionalOnSingleCandidate (types: org.springframework.transaction.PlatformTransactionManager; SearchStrategy: all) found a single bean 'transactionManager' (OnBeanCondition)
+
+   TransactionAutoConfiguration.TransactionTemplateConfiguration#transactionTemplate matched:
+      - @ConditionalOnMissingBean (types: org.springframework.transaction.support.TransactionOperations; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+
+Negative matches:
+-----------------
+
+   Cache2kCacheConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.cache2k.Cache2kBuilder' (OnClassCondition)
+
+   CacheAutoConfiguration:
+      Did not match:
+         - @ConditionalOnBean (types: org.springframework.cache.interceptor.CacheAspectSupport; SearchStrategy: all) did not find any beans of type org.springframework.cache.interceptor.CacheAspectSupport (OnBeanCondition)
+      Matched:
+         - @ConditionalOnClass found required class 'org.springframework.cache.CacheManager' (OnClassCondition)
+
+   CacheAutoConfiguration.CacheManagerEntityManagerFactoryDependsOnPostProcessor:
+      Did not match:
+         - Ancestor org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration did not match (ConditionEvaluationReport.AncestorsMatchedCondition)
+      Matched:
+         - @ConditionalOnClass found required class 'org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean' (OnClassCondition)
+
+   CaffeineCacheConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'com.github.benmanes.caffeine.cache.Caffeine' (OnClassCondition)
+
+   CouchbaseCacheConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'com.couchbase.client.java.Cluster' (OnClassCondition)
+
+   DataSourceAutoConfiguration.EmbeddedDatabaseConfiguration:
+      Did not match:
+         - EmbeddedDataSource spring.datasource.url is set (DataSourceAutoConfiguration.EmbeddedDatabaseCondition)
+
+   DataSourceCheckpointRestoreConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.crac.Resource' (OnClassCondition)
+
+   DataSourceConfiguration.Dbcp2:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.apache.commons.dbcp2.BasicDataSource' (OnClassCondition)
+
+   DataSourceConfiguration.Generic:
+      Did not match:
+         - @ConditionalOnProperty (spring.datasource.type) did not find property 'spring.datasource.type' (OnPropertyCondition)
+
+   DataSourceConfiguration.OracleUcp:
+      Did not match:
+         - @ConditionalOnClass did not find required classes 'oracle.ucp.jdbc.PoolDataSourceImpl', 'oracle.jdbc.OracleConnection' (OnClassCondition)
+
+   DataSourceConfiguration.Tomcat:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.apache.tomcat.jdbc.pool.DataSource' (OnClassCondition)
+
+   DataSourceJmxConfiguration:
+      Did not match:
+         - @ConditionalOnProperty (spring.jmx.enabled=true) found different value in property 'enabled' (OnPropertyCondition)
+
+   DataSourcePoolMetadataProvidersConfiguration.CommonsDbcp2PoolDataSourceMetadataProviderConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.apache.commons.dbcp2.BasicDataSource' (OnClassCondition)
+
+   DataSourcePoolMetadataProvidersConfiguration.OracleUcpPoolDataSourceMetadataProviderConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required classes 'oracle.ucp.jdbc.PoolDataSource', 'oracle.jdbc.OracleConnection' (OnClassCondition)
+
+   DataSourcePoolMetadataProvidersConfiguration.TomcatDataSourcePoolMetadataProviderConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.apache.tomcat.jdbc.pool.DataSource' (OnClassCondition)
+
+   DataSourceTransactionManagerAutoConfiguration.JdbcTransactionManagerConfiguration#transactionManager:
+      Did not match:
+         - @ConditionalOnMissingBean (types: org.springframework.transaction.TransactionManager; SearchStrategy: all) found beans of type 'org.springframework.transaction.TransactionManager' transactionManager (OnBeanCondition)
+
+   FlywayAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.flywaydb.core.Flyway' (OnClassCondition)
+
+   GenericCacheConfiguration:
+      Did not match:
+         - Cache org.springframework.boot.autoconfigure.cache.GenericCacheConfiguration unknown cache type (CacheCondition)
+
+   HazelcastCacheConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'com.hazelcast.core.HazelcastInstance' (OnClassCondition)
+
+   InfinispanCacheConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.infinispan.spring.embedded.provider.SpringEmbeddedCacheManager' (OnClassCondition)
+
+   JCacheCacheConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'javax.cache.Caching' (OnClassCondition)
+
+   JpaBaseConfiguration.JpaWebConfiguration:
+      Did not match:
+         - not a servlet web application (OnWebApplicationCondition)
+      Matched:
+         - @ConditionalOnClass found required class 'org.springframework.web.servlet.config.annotation.WebMvcConfigurer' (OnClassCondition)
+
+   JpaRepositoriesAutoConfiguration#entityManagerFactoryBootstrapExecutorCustomizer:
+      Did not match:
+         - AnyNestedCondition 0 matched 2 did not; NestedCondition on JpaRepositoriesAutoConfiguration.BootstrapExecutorCondition.LazyBootstrapMode @ConditionalOnProperty (spring.data.jpa.repositories.bootstrap-mode=lazy) found different value in property 'bootstrap-mode'; NestedCondition on JpaRepositoriesAutoConfiguration.BootstrapExecutorCondition.DeferredBootstrapMode @ConditionalOnProperty (spring.data.jpa.repositories.bootstrap-mode=deferred) found different value in property 'bootstrap-mode' (JpaRepositoriesAutoConfiguration.BootstrapExecutorCondition)
+
+   LiquibaseAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'liquibase.change.DatabaseChange' (OnClassCondition)
+
+   R2dbcInitializationConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required classes 'io.r2dbc.spi.ConnectionFactory', 'org.springframework.r2dbc.connection.init.DatabasePopulator' (OnClassCondition)
+
+   RedisCacheConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.data.redis.connection.RedisConnectionFactory' (OnClassCondition)
+
+   SimpleCacheConfiguration:
+      Did not match:
+         - Cache org.springframework.boot.autoconfigure.cache.SimpleCacheConfiguration unknown cache type (CacheCondition)
+
+   TestDatabaseAutoConfiguration#dataSource:
+      Did not match:
+         - @ConditionalOnProperty (spring.test.database.replace=AUTO_CONFIGURED) did not find property 'replace' (OnPropertyCondition)
+
+   TransactionAutoConfiguration#transactionalOperator:
+      Did not match:
+         - @ConditionalOnSingleCandidate (types: org.springframework.transaction.ReactiveTransactionManager; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   TransactionAutoConfiguration.AspectJTransactionManagementConfiguration:
+      Did not match:
+         - @ConditionalOnBean (types: org.springframework.transaction.aspectj.AbstractTransactionAspect; SearchStrategy: all) did not find any beans of type org.springframework.transaction.aspectj.AbstractTransactionAspect (OnBeanCondition)
+
+   TransactionAutoConfiguration.EnableTransactionManagementConfiguration.JdkDynamicAutoProxyConfiguration:
+      Did not match:
+         - @ConditionalOnProperty (spring.aop.proxy-target-class=false) did not find property 'proxy-target-class' (OnPropertyCondition)
+
+
+Exclusions:
+-----------
+
+    None
+
+
+Unconditional classes:
+----------------------
+
+    org.springframework.boot.test.autoconfigure.jdbc.TestDatabaseAutoConfiguration
+
+
+
+2025-05-29T15:01:29.674-03:00  INFO 34184 --- [           main] c.e.p.r.GarageSectorRepositoryTest       : Started GarageSectorRepositoryTest in 8.41 seconds (process running for 15.027)
+2025-05-29T15:01:29.685-03:00 DEBUG 34184 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@63100783 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 0, missCount = 1, failureCount = 0]
+2025-05-29T15:01:29.694-03:00 DEBUG 34184 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@63100783 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 1, missCount = 1, failureCount = 0]
+2025-05-29T15:01:29.701-03:00 DEBUG 34184 --- [           main] sContextBeforeModesTestExecutionListener : Before test method: class [GarageSectorRepositoryTest], method [save_ShouldPersistNewSector], class annotated with @DirtiesContext [false] with mode [null], method annotated with @DirtiesContext [false] with mode [null]
+2025-05-29T15:01:29.724-03:00 DEBUG 34184 --- [           main] t.c.t.TransactionalTestExecutionListener : Explicit transaction definition [PROPAGATION_REQUIRED,ISOLATION_DEFAULT] found for test class [com.estapar.parking.repository.GarageSectorRepositoryTest] and test method [save_ShouldPersistNewSector]
+2025-05-29T15:01:29.724-03:00 DEBUG 34184 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@63100783 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 2, missCount = 1, failureCount = 0]
+2025-05-29T15:01:29.726-03:00 DEBUG 34184 --- [           main] t.c.t.TransactionalTestExecutionListener : No method-level @Rollback override: using default rollback [true] for test method [void com.estapar.parking.repository.GarageSectorRepositoryTest.save_ShouldPersistNewSector()]
+2025-05-29T15:01:29.728-03:00 DEBUG 34184 --- [           main] o.s.orm.jpa.JpaTransactionManager        : Creating new transaction with name [com.estapar.parking.repository.GarageSectorRepositoryTest.save_ShouldPersistNewSector]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+2025-05-29T15:01:29.729-03:00 DEBUG 34184 --- [           main] o.s.orm.jpa.JpaTransactionManager        : Opened new EntityManager [SessionImpl(301209060<open>)] for JPA transaction
+2025-05-29T15:01:29.732-03:00 DEBUG 34184 --- [           main] o.s.j.datasource.SimpleDriverDataSource  : Creating new JDBC Driver Connection to [jdbc:h2:mem:f41f4bc9-286b-4f9a-a0e4-95b7879cd638;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false]
+2025-05-29T15:01:29.736-03:00 DEBUG 34184 --- [           main] o.s.orm.jpa.JpaTransactionManager        : Exposing JPA transaction as JDBC [org.springframework.orm.jpa.vendor.HibernateJpaDialect$HibernateConnectionHandle@6375af2a]
+2025-05-29T15:01:29.738-03:00 DEBUG 34184 --- [           main] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test class [com.estapar.parking.repository.GarageSectorRepositoryTest]; test method [save_ShouldPersistNewSector]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@3e984100]; rollback [true]
+2025-05-29T15:01:29.745-03:00 DEBUG 34184 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@63100783 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 3, missCount = 1, failureCount = 0]
+2025-05-29T15:01:29.747-03:00 DEBUG 34184 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@63100783 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 4, missCount = 1, failureCount = 0]
+2025-05-29T15:01:29.873-03:00 DEBUG 34184 --- [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        garage_sectors
+        (base_price, close_hour, current_occupancy, duration_limit_minutes, max_capacity, open_hour, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        garage_sectors
+        (base_price, close_hour, current_occupancy, duration_limit_minutes, max_capacity, open_hour, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2025-05-29T15:01:29.933-03:00 DEBUG 34184 --- [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        garage_sectors
+        (base_price, close_hour, current_occupancy, duration_limit_minutes, max_capacity, open_hour, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        garage_sectors
+        (base_price, close_hour, current_occupancy, duration_limit_minutes, max_capacity, open_hour, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2025-05-29T15:01:29.946-03:00 DEBUG 34184 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@63100783 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 5, missCount = 1, failureCount = 0]
+2025-05-29T15:01:29.966-03:00 DEBUG 34184 --- [           main] o.s.orm.jpa.JpaTransactionManager        : Found thread-bound EntityManager [SessionImpl(301209060<open>)] for JPA transaction
+2025-05-29T15:01:29.966-03:00 DEBUG 34184 --- [           main] o.s.orm.jpa.JpaTransactionManager        : Participating in existing transaction
+2025-05-29T15:01:30.048-03:00 DEBUG 34184 --- [           main] org.hibernate.SQL                        : 
+    select
+        gs1_0.id,
+        gs1_0.base_price,
+        gs1_0.close_hour,
+        gs1_0.current_occupancy,
+        gs1_0.duration_limit_minutes,
+        gs1_0.max_capacity,
+        gs1_0.open_hour 
+    from
+        garage_sectors gs1_0 
+    where
+        gs1_0.id=?
+Hibernate: 
+    select
+        gs1_0.id,
+        gs1_0.base_price,
+        gs1_0.close_hour,
+        gs1_0.current_occupancy,
+        gs1_0.duration_limit_minutes,
+        gs1_0.max_capacity,
+        gs1_0.open_hour 
+    from
+        garage_sectors gs1_0 
+    where
+        gs1_0.id=?
+2025-05-29T15:01:30.162-03:00 DEBUG 34184 --- [           main] o.s.orm.jpa.JpaTransactionManager        : Found thread-bound EntityManager [SessionImpl(301209060<open>)] for JPA transaction
+2025-05-29T15:01:30.163-03:00 DEBUG 34184 --- [           main] o.s.orm.jpa.JpaTransactionManager        : Participating in existing transaction
+2025-05-29T15:01:30.191-03:00 DEBUG 34184 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@63100783 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 6, missCount = 1, failureCount = 0]
+2025-05-29T15:01:30.192-03:00 DEBUG 34184 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@63100783 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 7, missCount = 1, failureCount = 0]
+2025-05-29T15:01:30.193-03:00 DEBUG 34184 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@63100783 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 8, missCount = 1, failureCount = 0]
+2025-05-29T15:01:30.198-03:00 DEBUG 34184 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@63100783 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 9, missCount = 1, failureCount = 0]
+2025-05-29T15:01:30.203-03:00 DEBUG 34184 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@63100783 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 10, missCount = 1, failureCount = 0]
+2025-05-29T15:01:30.209-03:00 DEBUG 34184 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@63100783 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 11, missCount = 1, failureCount = 0]
+2025-05-29T15:01:30.214-03:00 DEBUG 34184 --- [           main] o.s.orm.jpa.JpaTransactionManager        : Initiating transaction rollback
+2025-05-29T15:01:30.216-03:00 DEBUG 34184 --- [           main] o.s.orm.jpa.JpaTransactionManager        : Rolling back JPA transaction on EntityManager [SessionImpl(301209060<open>)]
+2025-05-29T15:01:30.227-03:00 DEBUG 34184 --- [           main] o.s.orm.jpa.JpaTransactionManager        : Closing JPA EntityManager [SessionImpl(301209060<open>)] after transaction
+2025-05-29T15:01:30.228-03:00 DEBUG 34184 --- [           main] o.s.t.c.transaction.TransactionContext   : Rolled back transaction (1) for test class [com.estapar.parking.repository.GarageSectorRepositoryTest]; test method [save_ShouldPersistNewSector]
+2025-05-29T15:01:30.230-03:00 DEBUG 34184 --- [           main] .c.s.DirtiesContextTestExecutionListener : After test method: class [GarageSectorRepositoryTest], method [save_ShouldPersistNewSector], class annotated with @DirtiesContext [false] with mode [null], method annotated with @DirtiesContext [false] with mode [null]
+]]></system-out>
+  </testcase>
+  <testcase name="save_ShouldUpdateExistingSector" classname="com.estapar.parking.repository.GarageSectorRepositoryTest" time="0.085">
+    <system-out><![CDATA[2025-05-29T15:01:30.234-03:00 DEBUG 34184 --- [           main] DependencyInjectionTestExecutionListener : Performing dependency injection for test class com.estapar.parking.repository.GarageSectorRepositoryTest
+2025-05-29T15:01:30.235-03:00 DEBUG 34184 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@63100783 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 12, missCount = 1, failureCount = 0]
+2025-05-29T15:01:30.238-03:00 DEBUG 34184 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@63100783 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 13, missCount = 1, failureCount = 0]
+2025-05-29T15:01:30.245-03:00 DEBUG 34184 --- [           main] sContextBeforeModesTestExecutionListener : Before test method: class [GarageSectorRepositoryTest], method [save_ShouldUpdateExistingSector], class annotated with @DirtiesContext [false] with mode [null], method annotated with @DirtiesContext [false] with mode [null]
+2025-05-29T15:01:30.246-03:00 DEBUG 34184 --- [           main] t.c.t.TransactionalTestExecutionListener : Explicit transaction definition [PROPAGATION_REQUIRED,ISOLATION_DEFAULT] found for test class [com.estapar.parking.repository.GarageSectorRepositoryTest] and test method [save_ShouldUpdateExistingSector]
+2025-05-29T15:01:30.249-03:00 DEBUG 34184 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@63100783 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 14, missCount = 1, failureCount = 0]
+2025-05-29T15:01:30.251-03:00 DEBUG 34184 --- [           main] t.c.t.TransactionalTestExecutionListener : No method-level @Rollback override: using default rollback [true] for test method [void com.estapar.parking.repository.GarageSectorRepositoryTest.save_ShouldUpdateExistingSector()]
+2025-05-29T15:01:30.253-03:00 DEBUG 34184 --- [           main] o.s.orm.jpa.JpaTransactionManager        : Creating new transaction with name [com.estapar.parking.repository.GarageSectorRepositoryTest.save_ShouldUpdateExistingSector]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+2025-05-29T15:01:30.254-03:00 DEBUG 34184 --- [           main] o.s.orm.jpa.JpaTransactionManager        : Opened new EntityManager [SessionImpl(330639443<open>)] for JPA transaction
+2025-05-29T15:01:30.255-03:00 DEBUG 34184 --- [           main] o.s.j.datasource.SimpleDriverDataSource  : Creating new JDBC Driver Connection to [jdbc:h2:mem:f41f4bc9-286b-4f9a-a0e4-95b7879cd638;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false]
+2025-05-29T15:01:30.257-03:00 DEBUG 34184 --- [           main] o.s.orm.jpa.JpaTransactionManager        : Exposing JPA transaction as JDBC [org.springframework.orm.jpa.vendor.HibernateJpaDialect$HibernateConnectionHandle@4d2d0eda]
+2025-05-29T15:01:30.259-03:00 DEBUG 34184 --- [           main] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test class [com.estapar.parking.repository.GarageSectorRepositoryTest]; test method [save_ShouldUpdateExistingSector]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@3e984100]; rollback [true]
+2025-05-29T15:01:30.261-03:00 DEBUG 34184 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@63100783 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 15, missCount = 1, failureCount = 0]
+2025-05-29T15:01:30.262-03:00 DEBUG 34184 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@63100783 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 16, missCount = 1, failureCount = 0]
+2025-05-29T15:01:30.269-03:00 DEBUG 34184 --- [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        garage_sectors
+        (base_price, close_hour, current_occupancy, duration_limit_minutes, max_capacity, open_hour, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        garage_sectors
+        (base_price, close_hour, current_occupancy, duration_limit_minutes, max_capacity, open_hour, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2025-05-29T15:01:30.275-03:00 DEBUG 34184 --- [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        garage_sectors
+        (base_price, close_hour, current_occupancy, duration_limit_minutes, max_capacity, open_hour, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        garage_sectors
+        (base_price, close_hour, current_occupancy, duration_limit_minutes, max_capacity, open_hour, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2025-05-29T15:01:30.279-03:00 DEBUG 34184 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@63100783 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 17, missCount = 1, failureCount = 0]
+2025-05-29T15:01:30.281-03:00 DEBUG 34184 --- [           main] o.s.orm.jpa.JpaTransactionManager        : Found thread-bound EntityManager [SessionImpl(330639443<open>)] for JPA transaction
+2025-05-29T15:01:30.282-03:00 DEBUG 34184 --- [           main] o.s.orm.jpa.JpaTransactionManager        : Participating in existing transaction
+2025-05-29T15:01:30.307-03:00 DEBUG 34184 --- [           main] o.s.orm.jpa.JpaTransactionManager        : Found thread-bound EntityManager [SessionImpl(330639443<open>)] for JPA transaction
+2025-05-29T15:01:30.307-03:00 DEBUG 34184 --- [           main] o.s.orm.jpa.JpaTransactionManager        : Participating in existing transaction
+2025-05-29T15:01:30.310-03:00 DEBUG 34184 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@63100783 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 18, missCount = 1, failureCount = 0]
+2025-05-29T15:01:30.311-03:00 DEBUG 34184 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@63100783 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 19, missCount = 1, failureCount = 0]
+2025-05-29T15:01:30.312-03:00 DEBUG 34184 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@63100783 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 20, missCount = 1, failureCount = 0]
+2025-05-29T15:01:30.313-03:00 DEBUG 34184 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@63100783 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 21, missCount = 1, failureCount = 0]
+2025-05-29T15:01:30.315-03:00 DEBUG 34184 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@63100783 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 22, missCount = 1, failureCount = 0]
+2025-05-29T15:01:30.319-03:00 DEBUG 34184 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@63100783 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 23, missCount = 1, failureCount = 0]
+2025-05-29T15:01:30.321-03:00 DEBUG 34184 --- [           main] o.s.orm.jpa.JpaTransactionManager        : Initiating transaction rollback
+2025-05-29T15:01:30.321-03:00 DEBUG 34184 --- [           main] o.s.orm.jpa.JpaTransactionManager        : Rolling back JPA transaction on EntityManager [SessionImpl(330639443<open>)]
+2025-05-29T15:01:30.323-03:00 DEBUG 34184 --- [           main] o.s.orm.jpa.JpaTransactionManager        : Closing JPA EntityManager [SessionImpl(330639443<open>)] after transaction
+2025-05-29T15:01:30.325-03:00 DEBUG 34184 --- [           main] o.s.t.c.transaction.TransactionContext   : Rolled back transaction (1) for test class [com.estapar.parking.repository.GarageSectorRepositoryTest]; test method [save_ShouldUpdateExistingSector]
+2025-05-29T15:01:30.325-03:00 DEBUG 34184 --- [           main] .c.s.DirtiesContextTestExecutionListener : After test method: class [GarageSectorRepositoryTest], method [save_ShouldUpdateExistingSector], class annotated with @DirtiesContext [false] with mode [null], method annotated with @DirtiesContext [false] with mode [null]
+]]></system-out>
+  </testcase>
+  <testcase name="findById_ShouldReturnEmptyForNonExistentId" classname="com.estapar.parking.repository.GarageSectorRepositoryTest" time="0.035">
+    <system-out><![CDATA[2025-05-29T15:01:30.329-03:00 DEBUG 34184 --- [           main] DependencyInjectionTestExecutionListener : Performing dependency injection for test class com.estapar.parking.repository.GarageSectorRepositoryTest
+2025-05-29T15:01:30.330-03:00 DEBUG 34184 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@63100783 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 24, missCount = 1, failureCount = 0]
+2025-05-29T15:01:30.334-03:00 DEBUG 34184 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@63100783 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 25, missCount = 1, failureCount = 0]
+2025-05-29T15:01:30.337-03:00 DEBUG 34184 --- [           main] sContextBeforeModesTestExecutionListener : Before test method: class [GarageSectorRepositoryTest], method [findById_ShouldReturnEmptyForNonExistentId], class annotated with @DirtiesContext [false] with mode [null], method annotated with @DirtiesContext [false] with mode [null]
+2025-05-29T15:01:30.339-03:00 DEBUG 34184 --- [           main] t.c.t.TransactionalTestExecutionListener : Explicit transaction definition [PROPAGATION_REQUIRED,ISOLATION_DEFAULT] found for test class [com.estapar.parking.repository.GarageSectorRepositoryTest] and test method [findById_ShouldReturnEmptyForNonExistentId]
+2025-05-29T15:01:30.340-03:00 DEBUG 34184 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@63100783 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 26, missCount = 1, failureCount = 0]
+2025-05-29T15:01:30.345-03:00 DEBUG 34184 --- [           main] t.c.t.TransactionalTestExecutionListener : No method-level @Rollback override: using default rollback [true] for test method [void com.estapar.parking.repository.GarageSectorRepositoryTest.findById_ShouldReturnEmptyForNonExistentId()]
+2025-05-29T15:01:30.346-03:00 DEBUG 34184 --- [           main] o.s.orm.jpa.JpaTransactionManager        : Creating new transaction with name [com.estapar.parking.repository.GarageSectorRepositoryTest.findById_ShouldReturnEmptyForNonExistentId]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+2025-05-29T15:01:30.346-03:00 DEBUG 34184 --- [           main] o.s.orm.jpa.JpaTransactionManager        : Opened new EntityManager [SessionImpl(1713366724<open>)] for JPA transaction
+2025-05-29T15:01:30.346-03:00 DEBUG 34184 --- [           main] o.s.j.datasource.SimpleDriverDataSource  : Creating new JDBC Driver Connection to [jdbc:h2:mem:f41f4bc9-286b-4f9a-a0e4-95b7879cd638;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false]
+2025-05-29T15:01:30.354-03:00 DEBUG 34184 --- [           main] o.s.orm.jpa.JpaTransactionManager        : Exposing JPA transaction as JDBC [org.springframework.orm.jpa.vendor.HibernateJpaDialect$HibernateConnectionHandle@42eb459d]
+2025-05-29T15:01:30.357-03:00 DEBUG 34184 --- [           main] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test class [com.estapar.parking.repository.GarageSectorRepositoryTest]; test method [findById_ShouldReturnEmptyForNonExistentId]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@3e984100]; rollback [true]
+2025-05-29T15:01:30.359-03:00 DEBUG 34184 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@63100783 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 27, missCount = 1, failureCount = 0]
+2025-05-29T15:01:30.359-03:00 DEBUG 34184 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@63100783 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 28, missCount = 1, failureCount = 0]
+2025-05-29T15:01:30.361-03:00 DEBUG 34184 --- [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        garage_sectors
+        (base_price, close_hour, current_occupancy, duration_limit_minutes, max_capacity, open_hour, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        garage_sectors
+        (base_price, close_hour, current_occupancy, duration_limit_minutes, max_capacity, open_hour, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2025-05-29T15:01:30.363-03:00 DEBUG 34184 --- [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        garage_sectors
+        (base_price, close_hour, current_occupancy, duration_limit_minutes, max_capacity, open_hour, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        garage_sectors
+        (base_price, close_hour, current_occupancy, duration_limit_minutes, max_capacity, open_hour, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2025-05-29T15:01:30.364-03:00 DEBUG 34184 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@63100783 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 29, missCount = 1, failureCount = 0]
+2025-05-29T15:01:30.365-03:00 DEBUG 34184 --- [           main] o.s.orm.jpa.JpaTransactionManager        : Found thread-bound EntityManager [SessionImpl(1713366724<open>)] for JPA transaction
+2025-05-29T15:01:30.365-03:00 DEBUG 34184 --- [           main] o.s.orm.jpa.JpaTransactionManager        : Participating in existing transaction
+2025-05-29T15:01:30.365-03:00 DEBUG 34184 --- [           main] org.hibernate.SQL                        : 
+    select
+        gs1_0.id,
+        gs1_0.base_price,
+        gs1_0.close_hour,
+        gs1_0.current_occupancy,
+        gs1_0.duration_limit_minutes,
+        gs1_0.max_capacity,
+        gs1_0.open_hour 
+    from
+        garage_sectors gs1_0 
+    where
+        gs1_0.id=?
+Hibernate: 
+    select
+        gs1_0.id,
+        gs1_0.base_price,
+        gs1_0.close_hour,
+        gs1_0.current_occupancy,
+        gs1_0.duration_limit_minutes,
+        gs1_0.max_capacity,
+        gs1_0.open_hour 
+    from
+        garage_sectors gs1_0 
+    where
+        gs1_0.id=?
+2025-05-29T15:01:30.366-03:00 DEBUG 34184 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@63100783 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 30, missCount = 1, failureCount = 0]
+2025-05-29T15:01:30.367-03:00 DEBUG 34184 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@63100783 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 31, missCount = 1, failureCount = 0]
+2025-05-29T15:01:30.367-03:00 DEBUG 34184 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@63100783 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 32, missCount = 1, failureCount = 0]
+2025-05-29T15:01:30.367-03:00 DEBUG 34184 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@63100783 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 33, missCount = 1, failureCount = 0]
+2025-05-29T15:01:30.367-03:00 DEBUG 34184 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@63100783 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 34, missCount = 1, failureCount = 0]
+2025-05-29T15:01:30.367-03:00 DEBUG 34184 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@63100783 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 35, missCount = 1, failureCount = 0]
+2025-05-29T15:01:30.369-03:00 DEBUG 34184 --- [           main] o.s.orm.jpa.JpaTransactionManager        : Initiating transaction rollback
+2025-05-29T15:01:30.369-03:00 DEBUG 34184 --- [           main] o.s.orm.jpa.JpaTransactionManager        : Rolling back JPA transaction on EntityManager [SessionImpl(1713366724<open>)]
+2025-05-29T15:01:30.369-03:00 DEBUG 34184 --- [           main] o.s.orm.jpa.JpaTransactionManager        : Closing JPA EntityManager [SessionImpl(1713366724<open>)] after transaction
+2025-05-29T15:01:30.369-03:00 DEBUG 34184 --- [           main] o.s.t.c.transaction.TransactionContext   : Rolled back transaction (1) for test class [com.estapar.parking.repository.GarageSectorRepositoryTest]; test method [findById_ShouldReturnEmptyForNonExistentId]
+2025-05-29T15:01:30.370-03:00 DEBUG 34184 --- [           main] .c.s.DirtiesContextTestExecutionListener : After test method: class [GarageSectorRepositoryTest], method [findById_ShouldReturnEmptyForNonExistentId], class annotated with @DirtiesContext [false] with mode [null], method annotated with @DirtiesContext [false] with mode [null]
+]]></system-out>
+  </testcase>
+  <testcase name="findById_ShouldReturnCorrectSector" classname="com.estapar.parking.repository.GarageSectorRepositoryTest" time="0.014">
+    <system-out><![CDATA[2025-05-29T15:01:30.370-03:00 DEBUG 34184 --- [           main] DependencyInjectionTestExecutionListener : Performing dependency injection for test class com.estapar.parking.repository.GarageSectorRepositoryTest
+2025-05-29T15:01:30.370-03:00 DEBUG 34184 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@63100783 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 36, missCount = 1, failureCount = 0]
+2025-05-29T15:01:30.371-03:00 DEBUG 34184 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@63100783 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 37, missCount = 1, failureCount = 0]
+2025-05-29T15:01:30.372-03:00 DEBUG 34184 --- [           main] sContextBeforeModesTestExecutionListener : Before test method: class [GarageSectorRepositoryTest], method [findById_ShouldReturnCorrectSector], class annotated with @DirtiesContext [false] with mode [null], method annotated with @DirtiesContext [false] with mode [null]
+2025-05-29T15:01:30.372-03:00 DEBUG 34184 --- [           main] t.c.t.TransactionalTestExecutionListener : Explicit transaction definition [PROPAGATION_REQUIRED,ISOLATION_DEFAULT] found for test class [com.estapar.parking.repository.GarageSectorRepositoryTest] and test method [findById_ShouldReturnCorrectSector]
+2025-05-29T15:01:30.373-03:00 DEBUG 34184 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@63100783 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 38, missCount = 1, failureCount = 0]
+2025-05-29T15:01:30.373-03:00 DEBUG 34184 --- [           main] t.c.t.TransactionalTestExecutionListener : No method-level @Rollback override: using default rollback [true] for test method [void com.estapar.parking.repository.GarageSectorRepositoryTest.findById_ShouldReturnCorrectSector()]
+2025-05-29T15:01:30.373-03:00 DEBUG 34184 --- [           main] o.s.orm.jpa.JpaTransactionManager        : Creating new transaction with name [com.estapar.parking.repository.GarageSectorRepositoryTest.findById_ShouldReturnCorrectSector]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+2025-05-29T15:01:30.373-03:00 DEBUG 34184 --- [           main] o.s.orm.jpa.JpaTransactionManager        : Opened new EntityManager [SessionImpl(1647557800<open>)] for JPA transaction
+2025-05-29T15:01:30.373-03:00 DEBUG 34184 --- [           main] o.s.j.datasource.SimpleDriverDataSource  : Creating new JDBC Driver Connection to [jdbc:h2:mem:f41f4bc9-286b-4f9a-a0e4-95b7879cd638;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false]
+2025-05-29T15:01:30.374-03:00 DEBUG 34184 --- [           main] o.s.orm.jpa.JpaTransactionManager        : Exposing JPA transaction as JDBC [org.springframework.orm.jpa.vendor.HibernateJpaDialect$HibernateConnectionHandle@2b454886]
+2025-05-29T15:01:30.374-03:00 DEBUG 34184 --- [           main] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test class [com.estapar.parking.repository.GarageSectorRepositoryTest]; test method [findById_ShouldReturnCorrectSector]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@3e984100]; rollback [true]
+2025-05-29T15:01:30.375-03:00 DEBUG 34184 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@63100783 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 39, missCount = 1, failureCount = 0]
+2025-05-29T15:01:30.375-03:00 DEBUG 34184 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@63100783 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 40, missCount = 1, failureCount = 0]
+2025-05-29T15:01:30.376-03:00 DEBUG 34184 --- [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        garage_sectors
+        (base_price, close_hour, current_occupancy, duration_limit_minutes, max_capacity, open_hour, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        garage_sectors
+        (base_price, close_hour, current_occupancy, duration_limit_minutes, max_capacity, open_hour, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2025-05-29T15:01:30.378-03:00 DEBUG 34184 --- [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        garage_sectors
+        (base_price, close_hour, current_occupancy, duration_limit_minutes, max_capacity, open_hour, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        garage_sectors
+        (base_price, close_hour, current_occupancy, duration_limit_minutes, max_capacity, open_hour, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2025-05-29T15:01:30.379-03:00 DEBUG 34184 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@63100783 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 41, missCount = 1, failureCount = 0]
+2025-05-29T15:01:30.380-03:00 DEBUG 34184 --- [           main] o.s.orm.jpa.JpaTransactionManager        : Found thread-bound EntityManager [SessionImpl(1647557800<open>)] for JPA transaction
+2025-05-29T15:01:30.380-03:00 DEBUG 34184 --- [           main] o.s.orm.jpa.JpaTransactionManager        : Participating in existing transaction
+2025-05-29T15:01:30.381-03:00 DEBUG 34184 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@63100783 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 42, missCount = 1, failureCount = 0]
+2025-05-29T15:01:30.381-03:00 DEBUG 34184 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@63100783 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 43, missCount = 1, failureCount = 0]
+2025-05-29T15:01:30.382-03:00 DEBUG 34184 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@63100783 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 44, missCount = 1, failureCount = 0]
+2025-05-29T15:01:30.382-03:00 DEBUG 34184 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@63100783 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 45, missCount = 1, failureCount = 0]
+2025-05-29T15:01:30.382-03:00 DEBUG 34184 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@63100783 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 46, missCount = 1, failureCount = 0]
+2025-05-29T15:01:30.383-03:00 DEBUG 34184 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@63100783 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 47, missCount = 1, failureCount = 0]
+2025-05-29T15:01:30.383-03:00 DEBUG 34184 --- [           main] o.s.orm.jpa.JpaTransactionManager        : Initiating transaction rollback
+2025-05-29T15:01:30.383-03:00 DEBUG 34184 --- [           main] o.s.orm.jpa.JpaTransactionManager        : Rolling back JPA transaction on EntityManager [SessionImpl(1647557800<open>)]
+2025-05-29T15:01:30.384-03:00 DEBUG 34184 --- [           main] o.s.orm.jpa.JpaTransactionManager        : Closing JPA EntityManager [SessionImpl(1647557800<open>)] after transaction
+2025-05-29T15:01:30.384-03:00 DEBUG 34184 --- [           main] o.s.t.c.transaction.TransactionContext   : Rolled back transaction (1) for test class [com.estapar.parking.repository.GarageSectorRepositoryTest]; test method [findById_ShouldReturnCorrectSector]
+2025-05-29T15:01:30.385-03:00 DEBUG 34184 --- [           main] .c.s.DirtiesContextTestExecutionListener : After test method: class [GarageSectorRepositoryTest], method [findById_ShouldReturnCorrectSector], class annotated with @DirtiesContext [false] with mode [null], method annotated with @DirtiesContext [false] with mode [null]
+]]></system-out>
+  </testcase>
+  <testcase name="findAll_ShouldReturnAllSectors" classname="com.estapar.parking.repository.GarageSectorRepositoryTest" time="0.078">
+    <system-out><![CDATA[2025-05-29T15:01:30.386-03:00 DEBUG 34184 --- [           main] DependencyInjectionTestExecutionListener : Performing dependency injection for test class com.estapar.parking.repository.GarageSectorRepositoryTest
+2025-05-29T15:01:30.386-03:00 DEBUG 34184 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@63100783 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 48, missCount = 1, failureCount = 0]
+2025-05-29T15:01:30.387-03:00 DEBUG 34184 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@63100783 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 49, missCount = 1, failureCount = 0]
+2025-05-29T15:01:30.389-03:00 DEBUG 34184 --- [           main] sContextBeforeModesTestExecutionListener : Before test method: class [GarageSectorRepositoryTest], method [findAll_ShouldReturnAllSectors], class annotated with @DirtiesContext [false] with mode [null], method annotated with @DirtiesContext [false] with mode [null]
+2025-05-29T15:01:30.390-03:00 DEBUG 34184 --- [           main] t.c.t.TransactionalTestExecutionListener : Explicit transaction definition [PROPAGATION_REQUIRED,ISOLATION_DEFAULT] found for test class [com.estapar.parking.repository.GarageSectorRepositoryTest] and test method [findAll_ShouldReturnAllSectors]
+2025-05-29T15:01:30.390-03:00 DEBUG 34184 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@63100783 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 50, missCount = 1, failureCount = 0]
+2025-05-29T15:01:30.390-03:00 DEBUG 34184 --- [           main] t.c.t.TransactionalTestExecutionListener : No method-level @Rollback override: using default rollback [true] for test method [void com.estapar.parking.repository.GarageSectorRepositoryTest.findAll_ShouldReturnAllSectors()]
+2025-05-29T15:01:30.390-03:00 DEBUG 34184 --- [           main] o.s.orm.jpa.JpaTransactionManager        : Creating new transaction with name [com.estapar.parking.repository.GarageSectorRepositoryTest.findAll_ShouldReturnAllSectors]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+2025-05-29T15:01:30.391-03:00 DEBUG 34184 --- [           main] o.s.orm.jpa.JpaTransactionManager        : Opened new EntityManager [SessionImpl(2080333964<open>)] for JPA transaction
+2025-05-29T15:01:30.391-03:00 DEBUG 34184 --- [           main] o.s.j.datasource.SimpleDriverDataSource  : Creating new JDBC Driver Connection to [jdbc:h2:mem:f41f4bc9-286b-4f9a-a0e4-95b7879cd638;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false]
+2025-05-29T15:01:30.391-03:00 DEBUG 34184 --- [           main] o.s.orm.jpa.JpaTransactionManager        : Exposing JPA transaction as JDBC [org.springframework.orm.jpa.vendor.HibernateJpaDialect$HibernateConnectionHandle@345f429]
+2025-05-29T15:01:30.392-03:00 DEBUG 34184 --- [           main] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test class [com.estapar.parking.repository.GarageSectorRepositoryTest]; test method [findAll_ShouldReturnAllSectors]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@3e984100]; rollback [true]
+2025-05-29T15:01:30.392-03:00 DEBUG 34184 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@63100783 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 51, missCount = 1, failureCount = 0]
+2025-05-29T15:01:30.392-03:00 DEBUG 34184 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@63100783 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 52, missCount = 1, failureCount = 0]
+2025-05-29T15:01:30.395-03:00 DEBUG 34184 --- [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        garage_sectors
+        (base_price, close_hour, current_occupancy, duration_limit_minutes, max_capacity, open_hour, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        garage_sectors
+        (base_price, close_hour, current_occupancy, duration_limit_minutes, max_capacity, open_hour, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2025-05-29T15:01:30.396-03:00 DEBUG 34184 --- [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        garage_sectors
+        (base_price, close_hour, current_occupancy, duration_limit_minutes, max_capacity, open_hour, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        garage_sectors
+        (base_price, close_hour, current_occupancy, duration_limit_minutes, max_capacity, open_hour, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2025-05-29T15:01:30.397-03:00 DEBUG 34184 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@63100783 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 53, missCount = 1, failureCount = 0]
+2025-05-29T15:01:30.398-03:00 DEBUG 34184 --- [           main] o.s.orm.jpa.JpaTransactionManager        : Found thread-bound EntityManager [SessionImpl(2080333964<open>)] for JPA transaction
+2025-05-29T15:01:30.398-03:00 DEBUG 34184 --- [           main] o.s.orm.jpa.JpaTransactionManager        : Participating in existing transaction
+2025-05-29T15:01:30.446-03:00 DEBUG 34184 --- [           main] org.hibernate.SQL                        : 
+    select
+        gs1_0.id,
+        gs1_0.base_price,
+        gs1_0.close_hour,
+        gs1_0.current_occupancy,
+        gs1_0.duration_limit_minutes,
+        gs1_0.max_capacity,
+        gs1_0.open_hour 
+    from
+        garage_sectors gs1_0
+Hibernate: 
+    select
+        gs1_0.id,
+        gs1_0.base_price,
+        gs1_0.close_hour,
+        gs1_0.current_occupancy,
+        gs1_0.duration_limit_minutes,
+        gs1_0.max_capacity,
+        gs1_0.open_hour 
+    from
+        garage_sectors gs1_0
+2025-05-29T15:01:30.462-03:00 DEBUG 34184 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@63100783 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 54, missCount = 1, failureCount = 0]
+2025-05-29T15:01:30.462-03:00 DEBUG 34184 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@63100783 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 55, missCount = 1, failureCount = 0]
+2025-05-29T15:01:30.463-03:00 DEBUG 34184 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@63100783 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 56, missCount = 1, failureCount = 0]
+2025-05-29T15:01:30.463-03:00 DEBUG 34184 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@63100783 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 57, missCount = 1, failureCount = 0]
+2025-05-29T15:01:30.463-03:00 DEBUG 34184 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@63100783 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 58, missCount = 1, failureCount = 0]
+2025-05-29T15:01:30.463-03:00 DEBUG 34184 --- [           main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@63100783 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 59, missCount = 1, failureCount = 0]
+2025-05-29T15:01:30.463-03:00 DEBUG 34184 --- [           main] o.s.orm.jpa.JpaTransactionManager        : Initiating transaction rollback
+2025-05-29T15:01:30.464-03:00 DEBUG 34184 --- [           main] o.s.orm.jpa.JpaTransactionManager        : Rolling back JPA transaction on EntityManager [SessionImpl(2080333964<open>)]
+2025-05-29T15:01:30.464-03:00 DEBUG 34184 --- [           main] o.s.orm.jpa.JpaTransactionManager        : Closing JPA EntityManager [SessionImpl(2080333964<open>)] after transaction
+2025-05-29T15:01:30.464-03:00 DEBUG 34184 --- [           main] o.s.t.c.transaction.TransactionContext   : Rolled back transaction (1) for test class [com.estapar.parking.repository.GarageSectorRepositoryTest]; test method [findAll_ShouldReturnAllSectors]
+2025-05-29T15:01:30.464-03:00 DEBUG 34184 --- [           main] .c.s.DirtiesContextTestExecutionListener : After test method: class [GarageSectorRepositoryTest], method [findAll_ShouldReturnAllSectors], class annotated with @DirtiesContext [false] with mode [null], method annotated with @DirtiesContext [false] with mode [null]
+]]></system-out>
+  </testcase>
+</testsuite>

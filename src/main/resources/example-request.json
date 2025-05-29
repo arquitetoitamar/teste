@@ -1,0 +1,66 @@
+{
+  "garage": [
+    {
+      "sector": "A1",
+      "basePrice": 10.00,
+      "maxCapacity": 50,
+      "openHour": "06:00",
+      "closeHour": "22:00",
+      "durationLimitMinutes": 120
+    },
+    {
+      "sector": "A2",
+      "basePrice": 12.00,
+      "maxCapacity": 30,
+      "openHour": "06:00",
+      "closeHour": "22:00",
+      "durationLimitMinutes": 180
+    },
+    {
+      "sector": "B1",
+      "basePrice": 15.00,
+      "maxCapacity": 20,
+      "openHour": "06:00",
+      "closeHour": "22:00",
+      "durationLimitMinutes": 240
+    }
+  ],
+  "spots": [
+    {
+      "sector": "A1",
+      "spot_number": "A1-001",
+      "lat": -23.550520,
+      "lng": -46.633308
+    },
+    {
+      "sector": "A1",
+      "spot_number": "A1-002",
+      "lat": -23.550521,
+      "lng": -46.633309
+    },
+    {
+      "sector": "A2",
+      "spot_number": "A2-001",
+      "lat": -23.550522,
+      "lng": -46.633310
+    },
+    {
+      "sector": "A2",
+      "spot_number": "A2-002",
+      "lat": -23.550523,
+      "lng": -46.633311
+    },
+    {
+      "sector": "B1",
+      "spot_number": "B1-001",
+      "lat": -23.550524,
+      "lng": -46.633312
+    },
+    {
+      "sector": "B1",
+      "spot_number": "B1-002",
+      "lat": -23.550525,
+      "lng": -46.633313
+    }
+  ]
+} 
