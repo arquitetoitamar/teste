@@ -20,10 +20,4 @@ public class GarageController {
         return ResponseEntity.ok(garageService.getCurrentConfig());
     }
 
-    @PostMapping("/garage/import")
-    @Operation(summary = "Importa nova configuração da garagem")
-    public ResponseEntity<Void> importGarageConfig(@RequestBody GarageConfigDTO config) {
-        garageService.importGarageConfig(config);
-        return ResponseEntity.ok().build();
-    }
 } 

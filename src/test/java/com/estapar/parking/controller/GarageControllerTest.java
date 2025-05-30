@@ -15,7 +15,6 @@ import org.springframework.http.ResponseEntity;
 import java.math.BigDecimal;
 import java.time.LocalTime;
 import java.util.Arrays;
-import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
@@ -71,27 +70,5 @@ class GarageControllerTest {
         assertNotNull(response.getBody());
         assertEquals(configDTO, response.getBody());
         verify(garageService, times(1)).getCurrentConfig();
-    }
-
-    @Test
-    void importGarageConfig_ShouldImportConfig() {
-        // Test
-        ResponseEntity<Void> response = controller.importGarageConfig(configDTO);
-
-        // Verify
-        assertNotNull(response);
-        assertEquals(200, response.getStatusCode().value());
-        verify(garageService, times(1)).importGarageConfig(configDTO);
-    }
-
-    @Test
-    void importGarageConfig_WhenConfigIsNull_ShouldStillProcess() {
-        // Test
-        ResponseEntity<Void> response = controller.importGarageConfig(null);
-
-        // Verify
-        assertNotNull(response);
-        assertEquals(200, response.getStatusCode().value());
-        verify(garageService, times(1)).importGarageConfig(null);
     }
 } 
