@@ -22,7 +22,7 @@ public class StatusService {
 
     @Transactional(readOnly = true)
     public PlateStatusDTO getPlateStatus(String licensePlate) {
-        Optional<ParkingSpot> spotOpt = spotRepository.findByLicensePlate(licensePlate);
+        Optional<ParkingSpot> spotOpt = spotRepository.findByLicensePlateAndOccupiedTrue(licensePlate);
         LocalDateTime now = LocalDateTime.now();
 
         if (spotOpt.isEmpty()) {

@@ -216,10 +216,10 @@ A documentação Swagger/OpenAPI está disponível em:
 ```
 src/main/java/com/estapar/parking/
 ├── controller/    # Controllers REST
-├── dto/          # Data Transfer Objects
-├── model/        # Entidades JPA
-├── repository/   # Repositórios JPA
-└── service/      # Serviços de negócio
+├── dto/           # Data Transfer Objects
+├── model/         # Entidades JPA
+├── repository/    # Repositórios JPA
+└── service/       # Serviços de negócio
 ```
 
 ## Testes

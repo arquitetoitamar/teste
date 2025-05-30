@@ -12,7 +12,6 @@ import com.estapar.parking.repository.GarageSectorRepository;
 import com.estapar.parking.repository.ParkingEventRepository;
 import com.estapar.parking.repository.ParkingSpotRepository;
 
-import org.hibernate.validator.internal.util.logging.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
