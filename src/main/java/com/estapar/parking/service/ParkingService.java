@@ -64,7 +64,7 @@ public class ParkingService {
         }
         
         // Verifica se o veículo já está no estacionamento
-        if (spotRepository.findByLicensePlate(event.getLicensePlate()).isPresent()) {
+        if (spotRepository.findByLicensePlateAndOccupiedTrue(event.getLicensePlate()).isPresent()) {
             throw new VehicleAlreadyParkedException("O veículo já está no estacionamento");
         }
         
@@ -98,36 +98,42 @@ public class ParkingService {
             throw new IllegalArgumentException("Placa, latitude e longitude inválidos");
         }
         
+        logger.info("handleParkedEvent - Placa: " + event.getLicensePlate() + 
+                   ", Latitude: " + event.getLatitude() + 
+                   ", Longitude: " + event.getLongitude());
        
-            ParkingSpot spot = spotRepository.findByLatitudeAndLongitude(event.getLatitude(), event.getLongitude())
-                .orElseThrow(() -> new ResourceNotFoundException("ParkingSpot", "Não foi encontrado setor para as coordenadas informadas"));
+        ParkingSpot spot = spotRepository.findByLatitudeAndLongitude(event.getLatitude(), event.getLongitude())
+            .orElseThrow(() -> new ResourceNotFoundException("ParkingSpot", "Não foi encontrado setor para as coordenadas informadas"));
                 
-            if (spot.isOccupied()) {
-                throw new SpotOccupiedException("A vaga já está ocupada");
-            }
-            
-            GarageSector sector = sectorRepository.findById(spot.getSectorId())
-                .orElseThrow(() -> new ResourceNotFoundException("GarageSector", "Setor não encontrado"));
+        if (spot.isOccupied()) {
+            throw new SpotOccupiedException("A vaga já está ocupada");
+        }
+        
+        GarageSector sector = sectorRepository.findById(spot.getSectorId())
+            .orElseThrow(() -> new ResourceNotFoundException("GarageSector", "Setor não encontrado"));
                 
-            if (!sector.canAcceptNewVehicle()) {
-                throw new SectorFullException("O setor está com capacidade máxima");
-            }
-            
-            spot.parkVehicle(event.getLicensePlate(), LocalDateTime.now());
-            sector.incrementOccupancy();
-            
-            ParkingEvent parkingEvent = new ParkingEvent();
-            parkingEvent.setLicensePlate(event.getLicensePlate().toUpperCase());
-            parkingEvent.setType(event.getEventType());
-            parkingEvent.setTimestamp(LocalDateTime.now());
-            parkingEvent.setLatitude(event.getLatitude());
-            parkingEvent.setLongitude(event.getLongitude());
-            parkingEvent.setSectorId(sector.getId());
-            
-            spotRepository.save(spot);
-            sectorRepository.save(sector);
-            eventRepository.save(parkingEvent);
-       
+        if (!sector.canAcceptNewVehicle()) {
+            throw new SectorFullException("O setor está com capacidade máxima");
+        }
+        
+        logger.info("Estacionando veículo - Placa: " + event.getLicensePlate() + 
+                   ", Setor: " + sector.getId() + 
+                   ", Vaga ID: " + spot.getId());
+        
+        spot.parkVehicle(event.getLicensePlate(), LocalDateTime.now());
+        sector.incrementOccupancy();
+        
+        ParkingEvent parkingEvent = new ParkingEvent();
+        parkingEvent.setLicensePlate(event.getLicensePlate().toUpperCase());
+        parkingEvent.setType(event.getEventType());
+        parkingEvent.setTimestamp(LocalDateTime.now());
+        parkingEvent.setLatitude(event.getLatitude());
+        parkingEvent.setLongitude(event.getLongitude());
+        parkingEvent.setSectorId(sector.getId());
+        
+        spotRepository.save(spot);
+        sectorRepository.save(sector);
+        eventRepository.save(parkingEvent);
     }
     
     private void handleExitEvent(VehicleEventDTO event) {
@@ -136,16 +142,30 @@ public class ParkingService {
             throw new IllegalArgumentException("Data de saída ou placa inválida");
         }
         
-        ParkingSpot spot = spotRepository.findByLicensePlate(event.getLicensePlate())
-            .orElse(null);
-            
-        if (spot == null || !spot.isOccupied()) {
-            throw new ResourceNotFoundException("ParkingSpot", "Não foi encontrado veiculo no estacionamento ou veiculo ja saiu");
+        // Log para debug
+        logger.info("Buscando vaga para placa: " + event.getLicensePlate());
+        List<ParkingSpot> allSpots = spotRepository.findByLicensePlate(event.getLicensePlate());
+        logger.info("Total de vagas encontradas: " + allSpots.size());
+        for (ParkingSpot spot : allSpots) {
+            logger.info("Vaga encontrada - ID: " + spot.getId() + 
+                       ", Placa: " + spot.getLicensePlate() + 
+                       ", Ocupada: " + spot.isOccupied() + 
+                       ", Setor: " + spot.getSectorId());
         }
+        
+        ParkingSpot spot = spotRepository.findByLicensePlateAndOccupiedTrue(event.getLicensePlate())
+            .orElseThrow(() -> new ResourceNotFoundException("ParkingSpot", "Não foi encontrado veiculo no estacionamento ou veiculo ja saiu"));
         
         GarageSector sector = sectorRepository.findById(spot.getSectorId().toUpperCase())
             .orElseThrow(() -> new ResourceNotFoundException("GarageSector", "Setor não encontrado"));
             
+        // Busca o evento de entrada
+        ParkingEvent entryEvent = eventRepository.findByLicensePlateAndTypeOrderByTimestampDesc(event.getLicensePlate(), "ENTRY")
+            .stream()
+            .findFirst()
+            .orElseThrow(() -> new ResourceNotFoundException("ParkingEvent", "Evento de entrada não encontrado"));
+            
+        logger.info("Evento de entrada encontrado - Timestamp: " + entryEvent.getTimestamp());
         
         spot.releaseVehicle();
         sector.decrementOccupancy();
@@ -159,7 +179,8 @@ public class ParkingService {
         parkingEvent.setSectorId(sector.getId());
         
         // Calculate and set the price
-        BigDecimal price = calculatePrice(event.getLicensePlate(), LocalDateTime.parse(event.getExitTime(), formatter));
+        BigDecimal price = calculatePrice(entryEvent.getTimestamp(), 
+        LocalDateTime.parse(event.getExitTime(), formatter), sector);
         parkingEvent.setPrice(price);
         
         spotRepository.save(spot);
@@ -190,25 +211,13 @@ public class ParkingService {
 
     @Transactional(readOnly = true)
     public ParkingSpot getSpotByLicensePlate(String licensePlate) {
-        return spotRepository.findByLicensePlate(licensePlate)
+        return spotRepository.findByLicensePlateAndOccupiedTrue(licensePlate)
             .orElseThrow(() -> new ResourceNotFoundException("ParkingSpot", "license plate"));
     }
 
     @Transactional(readOnly = true)
-    public BigDecimal calculatePrice(String licensePlate, LocalDateTime exitTime) {
-        ParkingSpot spot = spotRepository.findByLicensePlate(licensePlate)
-            .orElseThrow(() -> new ResourceNotFoundException("ParkingSpot", "license plate"));
-            
-        GarageSector sector = sectorRepository.findById(spot.getSectorId())
-            .orElseThrow(() -> new ResourceNotFoundException("GarageSector", spot.getSectorId()));
-
-        // Busca o evento de entrada do veículo
-        ParkingEvent entryEvent = eventRepository.findByLicensePlateAndTypeOrderByTimestampDesc(licensePlate, "ENTRY")
-            .stream()
-            .findFirst()
-            .orElseThrow(() -> new ResourceNotFoundException("ParkingEvent", "entry event"));
-
-        Duration duration = Duration.between(entryEvent.getTimestamp(), exitTime);
+    public BigDecimal calculatePrice(LocalDateTime entryTime, LocalDateTime exitTime, GarageSector sector) {
+        Duration duration = Duration.between(entryTime, exitTime);
         long hours = duration.toHours();
         long minutes = duration.toMinutes() % 60;
 

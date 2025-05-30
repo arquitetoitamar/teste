@@ -12,11 +12,14 @@ import java.util.Optional;
 
 @Repository
 public interface ParkingSpotRepository extends JpaRepository<ParkingSpot, Long> {
+    @Query("SELECT p FROM ParkingSpot p WHERE p.licensePlate = :licensePlate AND p.occupied = true")
+    Optional<ParkingSpot> findByLicensePlateAndOccupiedTrue(@Param("licensePlate") String licensePlate);
+    
+    List<ParkingSpot> findByLicensePlate(String licensePlate);
+    Optional<ParkingSpot> findByLatitudeAndLongitude(double latitude, double longitude);
     List<ParkingSpot> findBySectorIdAndOccupiedFalse(String sectorId);
     List<ParkingSpot> findBySectorIdAndOccupiedTrue(String sectorId);
     Optional<ParkingSpot> findFirstBySectorIdAndOccupiedFalse(String sectorId);
-    Optional<ParkingSpot> findByLatitudeAndLongitude(double latitude, double longitude);
-    Optional<ParkingSpot> findByLicensePlate(String licensePlate);
 
     @Query("SELECT p FROM ParkingSpot p WHERE p.sectorId = :sectorId AND p.entryTime = :entryTime")
     Optional<ParkingSpot> findBySectorIdAndEntryTime(@Param("sectorId") String sectorId, @Param("entryTime") LocalDateTime entryTime);
