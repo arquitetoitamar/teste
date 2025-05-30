@@ -47,3 +47,9 @@ application-dev.yml
 .DS_Store
 Thumbs.db
 
+### Docker ###
+.dockerignore   
+
+### Jenkins ###
+jenkins/
+
