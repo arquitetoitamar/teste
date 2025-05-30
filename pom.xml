@@ -98,12 +98,10 @@
         </dependency>
         <dependency>
             <groupId>io.cucumber</groupId>
-            <artifactId>cucumber-spring</artifactId>
+            <artifactId>cucumber-java8</artifactId>
             <version>7.15.0</version>
             <scope>test</scope>
         </dependency>
-        
-        <!-- Cucumber HTML Reporting -->
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-junit-platform-engine</artifactId>
@@ -139,6 +137,14 @@
         <dependency>
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
+            <scope>test</scope>
+        </dependency>
+        
+        <!-- Cucumber Spring -->
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-spring</artifactId>
+            <version>7.15.0</version>
             <scope>test</scope>
         </dependency>
     </dependencies>

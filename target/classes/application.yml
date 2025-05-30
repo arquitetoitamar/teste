@@ -51,9 +51,9 @@ management:
 
 logging:
   level:
-    com.estapar.parking: DEBUG
-    org.springframework: DEBUG
+    com.estapar.parking: INFO
+    org.springframework: INFO
     org.hibernate: INFO
-    org.hibernate.SQL: DEBUG
+    org.hibernate.SQL: INFO
     org.hibernate.type.descriptor.sql.BasicBinder: TRACE
-    org.flywaydb: DEBUG
+    org.flywaydb: INFO
