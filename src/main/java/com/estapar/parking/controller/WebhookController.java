@@ -15,7 +15,7 @@ public class WebhookController {
 
     @PostMapping
     public ResponseEntity<WebhookResponse> handleWebhook(@RequestBody VehicleEventDTO event) {
-        if (event == null) {
+        if (event == null || event.getEventType() == null) {
             return ResponseEntity.badRequest().body(new WebhookResponse(false, "Event cannot be null"));
         }
 
