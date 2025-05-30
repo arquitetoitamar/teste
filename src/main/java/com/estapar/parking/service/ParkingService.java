@@ -109,7 +109,7 @@ public class ParkingService {
                 throw new SectorFullException("O setor está com capacidade máxima");
             }
             
-            spot.parkVehicle(event.getLicensePlate());
+            spot.parkVehicle(event.getLicensePlate(), LocalDateTime.now());
             sector.incrementOccupancy();
             
             ParkingEvent parkingEvent = new ParkingEvent();

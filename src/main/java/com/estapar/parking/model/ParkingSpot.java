@@ -48,9 +48,9 @@ public class ParkingSpot {
         return !occupied;
     }
 
-    public void parkVehicle(String licensePlate) {
+    public void parkVehicle(String licensePlate, LocalDateTime entryTime) {
         this.licensePlate = licensePlate;
-        this.entryTime = LocalDateTime.now();
+        this.entryTime = entryTime;
         this.occupied = true;
     }
 
