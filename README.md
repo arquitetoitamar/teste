@@ -1,5 +1,7 @@
 # Sistema de Gerenciamento de Estacionamento
 
+[![Build and Test](https://github.com/actdigital/Estapar/actions/workflows/build-and-test.yml/badge.svg)](https://github.com/actdigital/Estapar/actions/workflows/build-and-test.yml)
+
 Este é um sistema backend para gestão de estacionamentos, desenvolvido em Java com Spring Boot.
 
 ## Requisitos
@@ -257,4 +259,4 @@ docker-compose logs -f
 
 # Reiniciar serviços
 docker-compose restart
-``` # teste
+```
