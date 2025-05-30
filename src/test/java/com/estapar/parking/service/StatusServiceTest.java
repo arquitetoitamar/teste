@@ -74,8 +74,8 @@ class StatusServiceTest {
     @Test
     void getPlateStatus_WhenVehicleIsParked_ShouldReturnCorrectStatus() {
         // Setup
-        when(spotRepository.findByLicensePlate(LICENSE_PLATE))
-                .thenReturn(Optional.of(spot));
+        when(spotRepository.findByLicensePlateAndOccupiedTrue(anyString()))
+            .thenReturn(Optional.of(spot));
 
         // Test
         PlateStatusDTO status = service.getPlateStatus(LICENSE_PLATE);
@@ -88,8 +88,8 @@ class StatusServiceTest {
     @Test
     void getPlateStatus_WhenVehicleIsNotParked_ShouldReturnNotParked() {
         // Setup
-        when(spotRepository.findByLicensePlate(LICENSE_PLATE))
-                .thenReturn(Optional.empty());
+        when(spotRepository.findByLicensePlateAndOccupiedTrue(anyString()))
+            .thenReturn(Optional.empty());
 
         // Test
         PlateStatusDTO status = service.getPlateStatus(LICENSE_PLATE);

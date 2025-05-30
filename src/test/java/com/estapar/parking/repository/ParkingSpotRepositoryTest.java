@@ -62,7 +62,7 @@ class ParkingSpotRepositoryTest {
 
     @Test
     void findByLicensePlate_ShouldReturnSpotForLicensePlate() {
-        Optional<ParkingSpot> spot = parkingSpotRepository.findByLicensePlate(LICENSE_PLATE_1);
+        Optional<ParkingSpot> spot = parkingSpotRepository.findByLicensePlateAndOccupiedTrue(LICENSE_PLATE_1);
         
         assertThat(spot).isPresent();
         assertThat(spot.get().getId()).isEqualTo(spot1.getId());
@@ -79,7 +79,7 @@ class ParkingSpotRepositoryTest {
 
     @Test
     void findByLicensePlate_ShouldReturnEmptyForNonExistentLicensePlate() {
-        Optional<ParkingSpot> spot = parkingSpotRepository.findByLicensePlate("NONEXISTENT");
+        Optional<ParkingSpot> spot = parkingSpotRepository.findByLicensePlateAndOccupiedTrue("NONEXISTENT");
         
         assertThat(spot).isEmpty();
     }
@@ -181,5 +181,20 @@ class ParkingSpotRepositoryTest {
         spot.setLatitude(-23.561684);
         spot.setLongitude(-46.655981);
         return parkingSpotRepository.save(spot);
+    }
+
+    @Test
+    void findByLicensePlateAndOccupiedTrue_ShouldReturnSpotForLicensePlate() {
+        Optional<ParkingSpot> spot = parkingSpotRepository.findByLicensePlateAndOccupiedTrue(LICENSE_PLATE_1);
+        
+        assertThat(spot).isPresent();
+        assertThat(spot.get().getId()).isEqualTo(spot1.getId());
+    }
+
+    @Test
+    void findByLicensePlateAndOccupiedTrue_ShouldReturnEmptyForNonExistentLicensePlate() {
+        Optional<ParkingSpot> spot = parkingSpotRepository.findByLicensePlateAndOccupiedTrue("NONEXISTENT");
+        
+        assertThat(spot).isEmpty();
     }
 } 
