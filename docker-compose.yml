@@ -5,7 +5,7 @@ services:
     image: postgres:15
     container_name: parking-postgres
     environment:
-      POSTGRES_DB: parking_management
+      POSTGRES_DB: postgres
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
     ports:
@@ -19,7 +19,7 @@ services:
     build: .
     container_name: parking-app
     environment:
-      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/parking_management
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/postgres
       SPRING_DATASOURCE_USERNAME: postgres
       SPRING_DATASOURCE_PASSWORD: postgres
     ports:

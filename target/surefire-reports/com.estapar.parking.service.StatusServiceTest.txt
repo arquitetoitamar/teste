@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.estapar.parking.service.StatusServiceTest
 -------------------------------------------------------------------------------
-Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.117 s -- in com.estapar.parking.service.StatusServiceTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.206 s -- in com.estapar.parking.service.StatusServiceTest

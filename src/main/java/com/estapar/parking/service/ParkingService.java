@@ -11,6 +11,8 @@ import com.estapar.parking.model.ParkingSpot;
 import com.estapar.parking.repository.GarageSectorRepository;
 import com.estapar.parking.repository.ParkingEventRepository;
 import com.estapar.parking.repository.ParkingSpotRepository;
+
+import org.hibernate.validator.internal.util.logging.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -20,9 +22,11 @@ import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
+import java.util.logging.Logger;
 
 @Service
 public class ParkingService {
+    private final Logger logger = Logger.getLogger(ParkingService.class.getName());
     private final GarageSectorRepository sectorRepository;
     private final ParkingSpotRepository spotRepository;
     private final ParkingEventRepository eventRepository;
@@ -113,7 +117,7 @@ public class ParkingService {
             sector.incrementOccupancy();
             
             ParkingEvent parkingEvent = new ParkingEvent();
-            parkingEvent.setLicensePlate(event.getLicensePlate());
+            parkingEvent.setLicensePlate(event.getLicensePlate().toUpperCase());
             parkingEvent.setType(event.getEventType());
             parkingEvent.setTimestamp(LocalDateTime.now());
             parkingEvent.setLatitude(event.getLatitude());
@@ -127,7 +131,8 @@ public class ParkingService {
     }
     
     private void handleExitEvent(VehicleEventDTO event) {
-        if (event.getExitTime() == null || event.getLicensePlate() == null) {
+        logger.info("handleExitEvent: " + event.getLicensePlate());
+        if (event.getExitTime() == null || event.getLicensePlate() == null || event.getLicensePlate().isEmpty()) {
             throw new IllegalArgumentException("Data de saída ou placa inválida");
         }
         
@@ -138,7 +143,7 @@ public class ParkingService {
             throw new ResourceNotFoundException("ParkingSpot", "Não foi encontrado veiculo no estacionamento ou veiculo ja saiu");
         }
         
-        GarageSector sector = sectorRepository.findById(spot.getSectorId())
+        GarageSector sector = sectorRepository.findById(spot.getSectorId().toUpperCase())
             .orElseThrow(() -> new ResourceNotFoundException("GarageSector", "Setor não encontrado"));
             
         
