@@ -1,6 +1,6 @@
-version: '3.8'
 
 services:
+
   postgres:
     image: postgres:15
     container_name: parking-postgres
@@ -23,7 +23,7 @@ services:
       SPRING_DATASOURCE_USERNAME: postgres
       SPRING_DATASOURCE_PASSWORD: postgres
     ports:
-      - "8080:8080"
+      - "3003:3003"
     depends_on:
       - postgres
     networks:

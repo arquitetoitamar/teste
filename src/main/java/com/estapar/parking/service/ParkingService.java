@@ -153,6 +153,10 @@ public class ParkingService {
         parkingEvent.setLongitude(spot.getLongitude());
         parkingEvent.setSectorId(sector.getId());
         
+        // Calculate and set the price
+        BigDecimal price = calculatePrice(event.getLicensePlate(), LocalDateTime.parse(event.getExitTime(), formatter));
+        parkingEvent.setPrice(price);
+        
         spotRepository.save(spot);
         sectorRepository.save(sector);
         eventRepository.save(parkingEvent);

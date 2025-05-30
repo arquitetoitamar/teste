@@ -20,10 +20,15 @@ public class GarageConfigDTO {
     @Data
     public static class GarageSectorConfig {
         private String sector;
+        @JsonProperty("base_price")
         private BigDecimal basePrice;
+        @JsonProperty("max_capacity")
         private int maxCapacity;
+        @JsonProperty("open_hour")
         private String openHour;
+        @JsonProperty("close_hour")
         private String closeHour;
+        @JsonProperty("duration_limit_minutes")
         private int durationLimitMinutes;
     }
 

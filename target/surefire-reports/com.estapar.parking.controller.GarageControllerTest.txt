@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.estapar.parking.controller.GarageControllerTest
 -------------------------------------------------------------------------------
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.124 s -- in com.estapar.parking.controller.GarageControllerTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.943 s -- in com.estapar.parking.controller.GarageControllerTest
