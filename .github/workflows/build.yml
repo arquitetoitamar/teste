@@ -2,7 +2,9 @@ name: Build and Test
 
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
 
 jobs:
   build:
@@ -20,6 +22,28 @@ jobs:
     
     - name: Build and Test with Maven
       run: mvn clean verify
+      env:
+        CUCUMBER_PUBLISH_ENABLED: true
+        CUCUMBER_PUBLISH_TOKEN: ${{ secrets.CUCUMBER_PUBLISH_TOKEN }}
+    
+    - name: Get Cucumber Report URL
+      id: cucumber
+      run: |
+        REPORT_URL=$(grep -o 'https://reports.cucumber.io/reports/[a-f0-9-]*' target/cucumber-reports/cucumber-report.html || echo "")
+        echo "report_url=$REPORT_URL" >> $GITHUB_OUTPUT
+    
+    - name: Update README with new Cucumber Report URL
+      if: steps.cucumber.outputs.report_url != ''
+      run: |
+        sed -i "s|https://reports.cucumber.io/reports/[a-f0-9-]*|${{ steps.cucumber.outputs.report_url }}|g" README.md
+    
+    - name: Commit and push if changed
+      if: steps.cucumber.outputs.report_url != ''
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add README.md
+        git diff --quiet && git diff --staged --quiet || (git commit -m "Update Cucumber Report URL" && git push)
     
     - name: Upload test results
       uses: actions/upload-artifact@v4
