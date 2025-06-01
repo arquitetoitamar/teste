@@ -157,14 +157,6 @@ public class ParkingSteps {
 
     @Quando("o veículo sai do estacionamento às {string}")
     public void oVeiculoSaiDoEstacionamentoAs(String exitTime) {
-        // Verifica se existe um evento de entrada
-        List<ParkingEvent> events = eventRepository.findByLicensePlateOrderByTimestampDesc(licensePlate);
-        if (events.isEmpty() || !"ENTRY".equals(events.get(0).getType())) {
-            // Se não existir, cria um evento de entrada
-            eventDTO.setEventType("ENTRY");
-            eventDTO.setEntryTime(LocalDateTime.now().minusHours(1).format(formatter));
-            parkingService.handleWebhookEvent(eventDTO);
-        }
         
         // Agora registra a saída
         eventDTO.setEventType("EXIT");
@@ -477,8 +469,6 @@ public class ParkingSteps {
         assertNotNull(status);
     }
 
-
-
     @Dado("que existe uma vaga nas coordenadas {string}")
     public void spotExists(String coordinates) {
         String[] coords = coordinates.split(", ");
@@ -630,5 +620,83 @@ public class ParkingSteps {
         parkingService.handleWebhookEvent(eventDTO);
     }
 
-    
+    @Entao("o valor total a ser pago deve ser {string}")
+    public void oValorTotalASerPagoDeveSer(String expectedValue) {
+        List<ParkingEvent> events = eventRepository.findByLicensePlateOrderByTimestampDesc(licensePlate);
+        assertFalse(events.isEmpty(), "Deve existir pelo menos um evento");
+        
+        // Verifica se o último evento é de saída
+        ParkingEvent exitEvent = events.stream().filter(event -> "EXIT".equals(event.getType())).findFirst().orElseThrow();
+        assertEquals("EXIT", exitEvent.getType(), "O último evento deve ser de saída");
+        
+        // Verifica o valor calculado
+        BigDecimal expectedPrice = new BigDecimal(expectedValue);
+        assertEquals(expectedPrice, exitEvent.getPrice(), "O valor calculado deve corresponder ao esperado");
+    }
+
+    @Entao("a vaga deve estar liberada")
+    public void aVagaDeveEstarLiberada() {
+        ParkingSpot spot = spotRepository.findByLatitudeAndLongitude(latitude, longitude)
+            .orElseThrow(() -> new RuntimeException("Vaga não encontrada"));
+        assertFalse(spot.isOccupied(), "A vaga deve estar liberada");
+        assertNull(spot.getLicensePlate(), "A placa do veículo deve ser removida da vaga");
+    }
+
+    @Entao("o veículo não deve mais estar no estacionamento")
+    public void oVeiculoNaoDeveMaisEstarNoEstacionamento() {
+        List<ParkingEvent> events = eventRepository.findByLicensePlateOrderByTimestampDesc(licensePlate);
+        assertFalse(events.isEmpty(), "Deve existir pelo menos um evento");
+        
+        // Verifica se o último evento é de saída
+        ParkingEvent exitEvent = events.stream().filter(event -> "EXIT".equals(event.getType())).findFirst().orElseThrow();
+        assertEquals("EXIT", exitEvent.getType(), "O último evento deve ser de saída");
+        
+        // Verifica se não há eventos de estacionamento após a saída
+        boolean hasParkingAfterExit = events.stream()
+            .skip(1) // Pula o evento de saída
+            .anyMatch(event -> "PARKED".equals(event.getType()));
+        assertFalse(hasParkingAfterExit, "Não deve haver eventos de estacionamento após a saída");
+    }
+
+    @Dado("que o veículo entrou no estacionamento às {string}")
+    public void que_o_veículo_entrou_no_estacionamento_às(String entryTime) {
+        eventDTO.setEventType("ENTRY");
+        eventDTO.setEntryTime(entryTime);
+        parkingService.handleWebhookEvent(eventDTO);
+        
+        // Verifica se o evento foi registrado
+        List<ParkingEvent> events = eventRepository.findByLicensePlateOrderByTimestampDesc(licensePlate);
+        assertFalse(events.isEmpty(), "Deve existir pelo menos um evento");
+        assertEquals("ENTRY", events.get(0).getType(), "O evento deve ser de entrada");
+    }
+
+    @Dado("que o veículo está estacionado nas coordenadas {double} e {double}")
+    public void que_o_veículo_está_estacionado_nas_coordenadas_e(double latitude, double longitude) {
+        this.latitude = latitude;
+        this.longitude = longitude;
+        
+        // Verifica se o setor existe
+        assertNotNull(sector, "O setor deve existir antes de criar a vaga");
+        
+        // Cria a vaga se não existir
+        spot = spotRepository.findByLatitudeAndLongitude(latitude, longitude)
+            .orElseGet(() -> {
+                ParkingSpot newSpot = new ParkingSpot();
+                newSpot.setLatitude(latitude);
+                newSpot.setLongitude(longitude);
+                newSpot.setSectorId(sector.getId());
+                return spotRepository.save(newSpot);
+            });
+        
+        // Registra o estacionamento
+        eventDTO.setEventType("PARKED");
+        eventDTO.setLatitude(latitude);
+        eventDTO.setLongitude(longitude);
+        parkingService.handleWebhookEvent(eventDTO);
+        
+        // Verifica se o evento foi registrado
+        List<ParkingEvent> events = eventRepository.findByLicensePlateOrderByTimestampDesc(licensePlate);
+        assertFalse(events.isEmpty(), "Deve existir pelo menos um evento");
+        assertEquals("PARKED", events.get(0).getType(), "O evento deve ser de estacionamento");
+    }
 } 

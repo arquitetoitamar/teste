@@ -27,3 +27,14 @@ Funcionalidade: Gerenciamento de Estacionamento
     E uma vaga nas coordenadas -23.561684 e -46.655981
     E que um veículo com placa "XYZ789" está estacionado nas coordenadas "-23.561684, -46.655981"
     Quando tento estacionar o veículo na vaga com coordenadas -23.561684 e -46.655981
+
+  Cenário: Veículo sai do estacionamento e valor é calculado
+    Dado que o sistema de estacionamento está operacional
+    E existe um setor "A" com preço base "10.00" e capacidade "100"
+    E um veículo com placa "ABC1234"
+    E que o veículo entrou no estacionamento às "2024-01-01T10:00:00"
+    E que o veículo está estacionado nas coordenadas -23.561684 e -46.655981
+    Quando o veículo sai do estacionamento às "2024-01-01T12:00:00"
+    Então o valor total a ser pago deve ser "9.00"
+    E a vaga deve estar liberada
+    E o veículo não deve mais estar no estacionamento
