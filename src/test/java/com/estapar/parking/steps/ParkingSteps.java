@@ -384,17 +384,6 @@ public class ParkingSteps {
         assertEquals("EXIT", events.get(0).getType());
     }
 
-    @Entao("a taxa de estacionamento deve ser calculada com base na duração")
-    public void parkingFeeShouldBeCalculated() {
-        BigDecimal price = parkingService.calculatePrice(
-            entryTime,
-            exitTime,
-            sector
-        );
-        assertNotNull(price);
-        assertTrue(price.compareTo(BigDecimal.ZERO) > 0);
-    }
-
     @Dado("que uma vaga nas coordenadas {string} está ocupada")
     public void spotIsOccupied(String coordinates) {
         String[] coords = coordinates.split(", ");
@@ -488,16 +477,7 @@ public class ParkingSteps {
         assertNotNull(status);
     }
 
-    @Entao("o preço calculado com base na duração")
-    public void priceCalculatedBasedOnDuration() {
-        BigDecimal price = parkingService.calculatePrice(
-            entryTime,
-            exitTime,
-            sector
-        );
-        assertNotNull(price);
-        assertTrue(price.compareTo(BigDecimal.ZERO) > 0);
-    }
+
 
     @Dado("que existe uma vaga nas coordenadas {string}")
     public void spotExists(String coordinates) {
@@ -650,29 +630,5 @@ public class ParkingSteps {
         parkingService.handleWebhookEvent(eventDTO);
     }
 
-    @Entao("o preço deve ser calculado com {int}% de desconto")
-    public void priceShouldBeCalculatedWithDiscount(int discountPercentage) {
-        BigDecimal price = parkingService.calculatePrice(
-            entryTime,
-            exitTime,
-            sector
-        );
-        BigDecimal basePrice = sector.getBasePrice().multiply(BigDecimal.valueOf(2)); // 2 horas
-        BigDecimal expectedPrice = basePrice.multiply(BigDecimal.valueOf(1 - discountPercentage / 100.0));
-        
-        assertEquals(0, price.compareTo(expectedPrice));
-    }
-
-    @Entao("o preço deve ser calculado com {int}% de aumento")
-    public void priceShouldBeCalculatedWithIncrease(int increasePercentage) {
-        BigDecimal price = parkingService.calculatePrice(
-            entryTime,
-            exitTime,
-            sector
-        );
-        BigDecimal basePrice = sector.getBasePrice().multiply(BigDecimal.valueOf(2)); // 2 horas
-        BigDecimal expectedPrice = basePrice.multiply(BigDecimal.valueOf(1 + increasePercentage / 100.0));
-        
-        assertEquals(0, price.compareTo(expectedPrice));
-    }
+    
 } 

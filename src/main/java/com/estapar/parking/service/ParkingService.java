@@ -112,7 +112,12 @@ public class ParkingService {
             .orElseThrow(() -> new ResourceNotFoundException("GarageSector", "Setor não encontrado"));
                 
         if (!sector.canAcceptNewVehicle()) {
-            throw new SectorFullException("O setor está com capacidade máxima");
+            throw new SectorFullException("O setor está com capacidade máxima e está fechado para novas entradas");
+        }
+        
+        // Verifica se o setor está fechado (100% de lotação)
+        if (sector.getCurrentOccupancy() >= sector.getMaxCapacity()) {
+            throw new SectorFullException("O setor está fechado por atingir 100% de lotação");
         }
         
         logger.info("Estacionando veículo - Placa: " + event.getLicensePlate() + 
@@ -129,6 +134,10 @@ public class ParkingService {
         parkingEvent.setLatitude(event.getLatitude());
         parkingEvent.setLongitude(event.getLongitude());
         parkingEvent.setSectorId(sector.getId());
+        
+        // Calcula o preço dinâmico baseado na lotação
+        BigDecimal dynamicPrice = sector.calculateDynamicPrice();
+        parkingEvent.setPrice(dynamicPrice);
         
         spotRepository.save(spot);
         sectorRepository.save(sector);
@@ -178,8 +187,7 @@ public class ParkingService {
         parkingEvent.setSectorId(sector.getId());
         
         // Calculate and set the price
-        BigDecimal price = calculatePrice(entryEvent.getTimestamp(), 
-        LocalDateTime.parse(event.getExitTime(), formatter), sector);
+        BigDecimal price = sector.calculateDynamicPrice();
         parkingEvent.setPrice(price);
         
         spotRepository.save(spot);
@@ -214,20 +222,4 @@ public class ParkingService {
             .orElseThrow(() -> new ResourceNotFoundException("ParkingSpot", "license plate"));
     }
 
-    @Transactional(readOnly = true)
-    public BigDecimal calculatePrice(LocalDateTime entryTime, LocalDateTime exitTime, GarageSector sector) {
-        Duration duration = Duration.between(entryTime, exitTime);
-        long hours = duration.toHours();
-        long minutes = duration.toMinutes() % 60;
-
-        BigDecimal basePrice = sector.getBasePrice();
-        BigDecimal totalPrice = basePrice.multiply(BigDecimal.valueOf(hours));
-
-        if (minutes > 0) {
-            BigDecimal minutePrice = basePrice.divide(BigDecimal.valueOf(60), 2, RoundingMode.HALF_UP);
-            totalPrice = totalPrice.add(minutePrice.multiply(BigDecimal.valueOf(minutes)));
-        }
-
-        return totalPrice.setScale(2, RoundingMode.HALF_UP);
-    }
 } 

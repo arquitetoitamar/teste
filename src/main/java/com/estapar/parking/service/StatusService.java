@@ -2,10 +2,13 @@ package com.estapar.parking.service;
 
 import com.estapar.parking.dto.PlateStatusDTO;
 import com.estapar.parking.dto.SpotStatusDTO;
+import com.estapar.parking.exception.ResourceNotFoundException;
+import com.estapar.parking.model.GarageSector;
 import com.estapar.parking.model.ParkingEvent;
 import com.estapar.parking.model.ParkingSpot;
 import com.estapar.parking.repository.ParkingEventRepository;
 import com.estapar.parking.repository.ParkingSpotRepository;
+import com.estapar.parking.repository.GarageSectorRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -19,9 +22,14 @@ import java.util.Optional;
 public class StatusService {
     private final ParkingSpotRepository spotRepository;
     private final ParkingEventRepository eventRepository;
+    private final GarageSectorRepository sectorRepository;
 
     @Transactional(readOnly = true)
     public PlateStatusDTO getPlateStatus(String licensePlate) {
+        if (licensePlate == null || licensePlate.isEmpty()) {
+            return new PlateStatusDTO(licensePlate, BigDecimal.ZERO, null, LocalDateTime.now(), null, null);
+        }
+
         Optional<ParkingSpot> spotOpt = spotRepository.findByLicensePlateAndOccupiedTrue(licensePlate);
         LocalDateTime now = LocalDateTime.now();
 
@@ -106,12 +114,19 @@ public class StatusService {
         long hours = java.time.Duration.between(entryTime, exitTime).toHours();
         long minutes = java.time.Duration.between(entryTime, exitTime).toMinutes() % 60;
 
-        // Preço base por hora (pode ser ajustado conforme necessário)
-        BigDecimal basePrice = new BigDecimal("10.00");
-        BigDecimal totalPrice = basePrice.multiply(BigDecimal.valueOf(hours));
+        // Busca o setor para obter o preço base e calcular o preço dinâmico
+        ParkingSpot spot = spotRepository.findByLicensePlateAndOccupiedTrue(licensePlate)
+            .orElseThrow(() -> new ResourceNotFoundException("ParkingSpot", "Vaga não encontrada"));
+        
+        GarageSector sector = sectorRepository.findById(spot.getSectorId())
+            .orElseThrow(() -> new ResourceNotFoundException("GarageSector", "Setor não encontrado"));
+
+        // Usa o preço dinâmico do setor
+        BigDecimal dynamicPrice = sector.calculateDynamicPrice();
+        BigDecimal totalPrice = dynamicPrice.multiply(BigDecimal.valueOf(hours));
 
         if (minutes > 0) {
-            BigDecimal minutePrice = basePrice.divide(BigDecimal.valueOf(60), 2, java.math.RoundingMode.HALF_UP);
+            BigDecimal minutePrice = dynamicPrice.divide(BigDecimal.valueOf(60), 2, java.math.RoundingMode.HALF_UP);
             totalPrice = totalPrice.add(minutePrice.multiply(BigDecimal.valueOf(minutes)));
         }
 

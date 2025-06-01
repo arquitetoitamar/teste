@@ -50,13 +50,17 @@ public class GarageSector {
 
     public BigDecimal calculateDynamicPrice() {
         double occupancyRate = (double) currentOccupancy / maxCapacity;
-        if (occupancyRate >= 0.9) {
-            return basePrice.multiply(BigDecimal.valueOf(1.5)); // 50% increase when almost full
-        } else if (occupancyRate >= 0.7) {
-            return basePrice.multiply(BigDecimal.valueOf(1.3)); // 30% increase when 70-90% full
-        } else if (occupancyRate >= 0.5) {
-            return basePrice.multiply(BigDecimal.valueOf(1.2)); // 20% increase when 50-70% full
+        
+        if (occupancyRate >= 1.0) {
+            return basePrice.multiply(BigDecimal.valueOf(1.25)); // 25% increase at 100%
+        } else if (occupancyRate >= 0.75) {
+            return basePrice.multiply(BigDecimal.valueOf(1.25)); // 25% increase at 75-100%
+        } else if (occupancyRate >= 0.50) {
+            return basePrice.multiply(BigDecimal.valueOf(1.10)); // 10% increase at 50-75%
+        } else if (occupancyRate >= 0.25) {
+            return basePrice; // Base price at 25-50%
+        } else {
+            return basePrice.multiply(BigDecimal.valueOf(0.90)); // 10% discount below 25%
         }
-        return basePrice;
     }
 } 

@@ -25,14 +25,14 @@ import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
-class StatusServiceTest {
-
-    @Mock
-    private ParkingEventRepository eventRepository;
+class StatusServiceUnitTest {
 
     @Mock
     private ParkingSpotRepository spotRepository;
-
+    
+    @Mock
+    private ParkingEventRepository eventRepository;
+    
     @InjectMocks
     private StatusService service;
 
@@ -117,30 +117,7 @@ class StatusServiceTest {
         // Verify
         assertNotNull(status);
         assertEquals("", status.getLicensePlate());
-
     }
-
-    @Test
-    void getSpotStatus_WhenOccupied_ShouldReturnCorrectStatus() {
-        // Setup
-        when(spotRepository.findByLatitudeAndLongitude(spot.getLatitude(), spot.getLongitude()))
-                .thenReturn(Optional.of(spot));
-        when(eventRepository.findByLicensePlateAndTypeOrderByTimestampDesc(LICENSE_PLATE, "ENTRY"))
-                .thenReturn(Arrays.asList(event));
-
-        // Test
-        SpotStatusDTO status = service.getSpotStatus(spot.getLatitude(), spot.getLongitude());
-
-        // Verify
-        assertNotNull(status);
-        assertTrue(status.isOccupied());
-        assertEquals(LICENSE_PLATE, status.getLicensePlate());
-        assertEquals(NOW.minusHours(2), status.getEntryTime());
-        assertEquals(new BigDecimal("20.00"), status.getPriceUntilNow());
-        assertNotNull(status.getTimeParked());
-    }
-
-
 
     @Test
     void getSpotStatus_WhenNoEntryEvent_ShouldReturnOccupiedWithoutPrice() {

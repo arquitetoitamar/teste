@@ -1,6 +1,7 @@
 # Sistema de Gerenciamento de Estacionamento
 
 [![Build and Test](https://github.com/arquitetoitamar/teste/actions/workflows/build.yml/badge.svg)](https://github.com/arquitetoitamar/teste/actions/workflows/build.yml)
+[![Cucumber Report](https://img.shields.io/badge/Cucumber%20Report-View%20Report-blue)](https://reports.cucumber.io/reports/667923bd-4c0e-40ba-b823-9ee0741cc079)
 
 Este é um sistema backend para gestão de estacionamentos, desenvolvido em Java com Spring Boot.
 
