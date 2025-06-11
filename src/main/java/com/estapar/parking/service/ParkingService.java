@@ -58,7 +58,7 @@ public class ParkingService {
     }
     
     private void handleEntryEvent(VehicleEventDTO event) {
-        if (event.getLicensePlate() == null && event.getEntryTime() == null) {
+        if (event.getLicensePlate() == null || event.getEntryTime() == null) {
             throw new IllegalArgumentException("Placa e data de entrada inválida");
         }
         
