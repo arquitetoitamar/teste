@@ -108,6 +108,21 @@ class WebhookControllerTest {
     }
 
     @Test
+    void handleWebhook_WhenEventTypeIsMissing_ShouldReturnBadRequest() throws Exception {
+        // Arrange
+        VehicleEventDTO event = new VehicleEventDTO();
+        event.setLicensePlate("ABC1234");
+
+        // Act & Assert
+        mockMvc.perform(post("/webhook")
+                .contentType(MediaType.APPLICATION_JSON)
+                .content(objectMapper.writeValueAsString(event)))
+                .andExpect(status().isBadRequest())
+                .andExpect(jsonPath("$.success").value(false))
+                .andExpect(jsonPath("$.message").value("Event cannot be null"));
+    }
+
+    @Test
     void handleWebhook_WhenServiceThrowsException_ShouldReturnInternalServerError() throws Exception {
         // Arrange
         VehicleEventDTO event = new VehicleEventDTO();
