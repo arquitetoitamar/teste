@@ -232,32 +232,3 @@ Para executar os testes:
 mvn test
 ```
 
-## Docker Compose
-
-O arquivo `docker-compose.yml` configura dois serviços:
-
-1. **PostgreSQL**
-   - Porta: 5432
-   - Banco: parking_management
-   - Usuário: postgres
-   - Senha: postgres
-   - Volume persistente para dados
-
-2. **Simulador de Garagem**
-   - Usa a imagem cfontes0estapar/garage-sim:1.0.0
-   - Modo de rede host para comunicação com a aplicação
-
-Para gerenciar os containers:
-```bash
-# Iniciar serviços
-docker-compose up -d
-
-# Parar serviços
-docker-compose down
-
-# Ver logs
-docker-compose logs -f
-
-# Reiniciar serviços
-docker-compose restart
-```
