@@ -35,7 +35,7 @@ O PostgreSQL estará disponível na porta 5432 e a aplicação em http://localho
 
 ### Configuração da Garagem
 - `GET /garage` - Obtém a configuração atual da garagem
-- `POST /garage` - Importa nova configuração da garagem
+- *Endpoint `POST /garage` para importar configuracoes ainda nao esta disponivel*
 
 ### Status
 - `POST /plate-status` - Consulta status de uma placa
@@ -192,7 +192,7 @@ A documentação Swagger/OpenAPI está disponível em:
 
 #### Configuração da Garagem
 - `GET /garage` - Obtém configuração da garagem
-- `POST /garage` - Importa configuração da garagem
+- *Endpoint `POST /garage` para importar configuracoes ainda nao esta disponivel*
 
 #### Webhook do Simulador
 - `POST /webhook` - Recebe eventos de entrada/saída/estacionamento
